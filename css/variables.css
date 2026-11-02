@@ -1,24 +1,41 @@
 :root {
-  --couleur-primaire: #0B5F73;
-  --couleur-primaire-fonce: #084657;
-  --couleur-sur-primaire: #FFFFFF;
-  --couleur-texte: #1B2A33;
-  --couleur-texte-discret: #4A5861;
-  --couleur-fond: #FFFFFF;
-  --couleur-surface: #EEF4F6;
-  --couleur-alerte: #B3261E;
-
-  --police: system-ui, -apple-system, "Segoe UI", sans-serif;
-
-  --taille-petit: 0.875rem;
-  --taille-base: 1rem;
-  --taille-h3: 1.125rem;
-  --taille-h2: 1.375rem;
-  --taille-h1: 1.75rem;
-  --taille-prix: 1.75rem;
-
-  --espace: 1rem;
-  --espace-grand: 2rem;
-  --rayon: 8px;
-  --cible: 44px;
-}
+    --couleur-primaire: #1d4ed8;
+    --couleur-primaire-fonce: #1e40af;
+    --couleur-primaire-pale: #eff6ff;
+    --couleur-primaire-bord: #bfdbfe;
+    --couleur-sur-primaire: #ffffff;
+    --couleur-texte: #1f2937;
+    --couleur-texte-discret: #4b5563;
+    --couleur-fond: #f3f6fb;
+    --couleur-surface: #ffffff;
+    --couleur-alerte: #991b1b;
+    --couleur-alerte-fond: #fee2e2;
+    --couleur-succes: #166534;
+    --couleur-succes-fond: #dcfce7;
+    --couleur-pied: #111827;
+    --couleur-pied-texte: #e5e7eb;
+  
+    --police: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  
+    --taille-xs: 0.75rem;
+    --taille-sm: 0.875rem;
+    --taille-base: 1rem;
+    --taille-lg: 1.25rem;
+    --taille-xl: 1.5rem;
+    --taille-h1: 1.75rem;
+  
+    --espace-mini: 0.25rem;
+    --espace-petit: 0.5rem;
+    --espace: 1rem;
+    --espace-grand: 1.5rem;
+    --espace-xl: 2.5rem;
+  
+    --rayon: 0.5rem;
+    --rayon-grand: 1rem;
+    --cible: 44px;
+    --bordure: 1px solid #dbe3ee;
+    --focus-epaisseur: 3px;
+    --ombre: 0 1px 2px rgb(15 23 42 / 6%), 0 4px 14px rgb(15 23 42 / 6%);
+    --ombre-survol: 0 8px 28px rgb(29 78 216 / 16%);
+    --largeur-max: 1200px;
+  }

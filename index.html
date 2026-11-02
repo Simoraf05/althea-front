@@ -1,65 +1,169 @@
-<main id="contenu">
-    <h1>Le matériel médical fiable, livré à votre cabinet</h1>
-  
-    <section class="carrousel" aria-label="À la une">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Althea Systems · Matériel médical</title>
+  <meta name="description" content="Découvrez le matériel médical et les équipements de diagnostic Althea Systems.">
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <p class="logo">
+      <a href="index.html" aria-label="Althea Systems, accueil">
+        <img src="img/logo.svg" alt="Althea Systems">
+      </a>
+    </p>
+
+    <p class="panier">
+      <a href="#panier" aria-label="Panier, 0 article">Panier <span class="compteur">0</span></a>
+    </p>
+
+    <details class="navigation-mobile">
+      <summary class="menu-bouton">Menu</summary>
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="liste-reset">
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="#diagnostic">Diagnostic</a></li>
+          <li><a href="#soins">Soins</a></li>
+          <li><a href="#mobilier">Mobilier</a></li>
+          <li><a href="#consommables">Consommables</a></li>
+          <li><a href="#conditions">Conditions générales</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </details>
+
+    <form class="recherche" action="index.html" method="get" role="search">
+      <label for="recherche-accueil">Rechercher un produit</label>
+      <input id="recherche-accueil" name="q" type="search" placeholder="Ex. tensiomètre">
+      <button type="submit">Rechercher</button>
+    </form>
+  </header>
+
+  <main id="contenu">
+    <h1>Le matériel médical qui prend soin de vous</h1>
+
+    <section class="carrousel" aria-labelledby="titre-carrousel">
+      <h2 id="titre-carrousel">À la une</h2>
       <ul class="liste-reset">
         <li class="slide">
-          <img src="img/slide-1.svg" alt="Un appareil de diagnostic posé sur un bureau" width="720" height="405">
-          <p>Découvrez les nouveautés de la saison.</p>
-          <a href="catalogue.html">Voir les nouveautés</a>
+          <img src="img/slide-diagnostic.svg" alt="Illustration de matériel de diagnostic médical">
+          <h3>Des équipements fiables pour le diagnostic</h3>
+          <p>Retrouvez une sélection d'appareils conçus pour accompagner les professionnels de santé.</p>
+          <a class="btn lien-btn" href="#diagnostic">Découvrir le diagnostic</a>
         </li>
         <li class="slide">
-          <img src="img/slide-2.svg" alt="Du matériel de diagnostic rangé sur une étagère" width="720" height="405" loading="lazy">
-          <p>Tout pour équiper votre cabinet.</p>
-          <a href="catalogue.html">Voir le diagnostic</a>
+          <img src="img/slide-soins.svg" alt="Illustration de matériel et accessoires de soins">
+          <h3>Le matériel essentiel aux soins</h3>
+          <p>Équipez votre espace de soins avec des produits pratiques et sélectionnés.</p>
+          <a class="btn lien-btn" href="#soins">Voir les produits de soins</a>
         </li>
         <li class="slide">
-          <img src="img/slide-3.svg" alt="Un colis livré devant la porte d'un cabinet" width="720" height="405" loading="lazy">
-          <p>Livraison en 48 h partout en France.</p>
-          <a href="catalogue.html">Voir la livraison</a>
+          <img src="img/slide-mobilier.svg" alt="Illustration de mobilier médical">
+          <h3>Aménagez votre espace médical</h3>
+          <p>Découvrez notre sélection de mobilier et de consommables médicaux.</p>
+          <a class="btn lien-btn" href="#mobilier">Découvrir la sélection</a>
         </li>
       </ul>
     </section>
-  
-    <p class="texte-fixe">Althea Systems équipe les professionnels de santé depuis 2010. Chaque appareil est contrôlé avant l'envoi et garanti deux ans.</p>
-  
+
+    <section class="presentation" aria-labelledby="titre-presentation">
+      <h2 id="titre-presentation">Bienvenue chez Althea Systems</h2>
+      <p>Althea Systems propose du matériel médical destiné aux professionnels et aux particuliers.</p>
+      <p>Notre objectif est de faciliter l'accès à des équipements utiles au diagnostic, aux soins et à l'aménagement des espaces de santé.</p>
+    </section>
+
     <section class="categories" aria-labelledby="titre-categories">
       <h2 id="titre-categories">Nos catégories</h2>
       <ul class="liste-reset">
-        <li><a href="catalogue.html">
-          <img src="img/cat-diagnostic.svg" alt="" width="400" height="300" loading="lazy">
-          Diagnostic</a></li>
-        <li><a href="catalogue.html">
-          <img src="img/cat-soins.svg" alt="" width="400" height="300" loading="lazy">
-          Soins</a></li>
-        <li><a href="catalogue.html">
-          <img src="img/cat-mobilier.svg" alt="" width="400" height="300" loading="lazy">
-          Mobilier</a></li>
-        <li><a href="catalogue.html">
-          <img src="img/cat-consommables.svg" alt="" width="400" height="300" loading="lazy">
-          Consommables</a></li>
+        <li class="carte" id="diagnostic">
+          <a href="produit.html">
+            <img src="img/categorie-diagnostic.svg" alt="Appareils de diagnostic">
+            <h3>Diagnostic</h3>
+          </a>
+        </li>
+        <li class="carte" id="soins">
+          <a href="produit.html">
+            <img src="img/categorie-soins.svg" alt="Matériel de soins">
+            <h3>Soins</h3>
+          </a>
+        </li>
+        <li class="carte" id="mobilier">
+          <a href="produit.html">
+            <img src="img/categorie-mobilier.svg" alt="Mobilier médical">
+            <h3>Mobilier médical</h3>
+          </a>
+        </li>
+        <li class="carte" id="consommables">
+          <a href="produit.html">
+            <img src="img/categorie-consommables.svg" alt="Consommables médicaux">
+            <h3>Consommables</h3>
+          </a>
+        </li>
       </ul>
     </section>
-  
-    <section class="top-produits" aria-labelledby="titre-top">
-      <h2 id="titre-top">Les Top Produits du moment</h2>
+
+    <section class="top-produits" aria-labelledby="titre-top-produits">
+      <h2 id="titre-top-produits">Top produits du moment</h2>
       <ul class="liste-reset">
         <li>
           <article class="produit">
-            <img src="img/produit-1.svg" alt="" width="400" height="300" loading="lazy">
-            <h3><a href="produit.html">Thermomètre sans contact</a></h3>
-            <p class="prix"><data value="19.90">19,90 €</data></p>
+            <a href="produit.html">
+              <img src="img/tensiometre.svg" alt="Tensiomètre électronique de bras">
+              <h3>Tensiomètre électronique de bras</h3>
+            </a>
+            <p class="prix">49,90 € TTC</p>
             <p class="stock">En stock</p>
           </article>
         </li>
         <li>
           <article class="produit">
-            <img src="img/produit-4.svg" alt="" width="400" height="300" loading="lazy">
-            <h3><a href="produit.html">Tensiomètre électronique de bras</a></h3>
-            <p class="prix"><data value="49.90">49,90 €</data></p>
-            <p class="stock stock-rupture">En rupture de stock</p>
+            <a href="produit.html">
+              <img src="img/oxymetre.svg" alt="Oxymètre de pouls">
+              <h3>Oxymètre de pouls</h3>
+            </a>
+            <p class="prix">24,90 € TTC</p>
+            <p class="stock">En stock</p>
+          </article>
+        </li>
+        <li>
+          <article class="produit">
+            <a href="produit.html">
+              <img src="img/thermometre.svg" alt="Thermomètre sans contact">
+              <h3>Thermomètre sans contact</h3>
+            </a>
+            <p class="prix">19,90 € TTC</p>
+            <p class="stock">En stock</p>
+          </article>
+        </li>
+        <li>
+          <article class="produit">
+            <a href="produit.html">
+              <img src="img/stethoscope.svg" alt="Stéthoscope double pavillon">
+              <h3>Stéthoscope double pavillon</h3>
+            </a>
+            <p class="prix">35,00 € TTC</p>
+            <p class="stock">En stock</p>
           </article>
         </li>
       </ul>
     </section>
   </main>
+
+  <footer class="pied">
+    <ul class="liste-reset">
+      <li><a href="#conditions">Conditions générales</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#instagram">Instagram</a></li>
+    </ul>
+    <p id="conditions">© 2026 Althea Systems. Tous droits réservés.</p>
+    <p id="contact">Contact : contact@althea.example</p>
+  </footer>
+</body>
+</html>
