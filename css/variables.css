@@ -1,0 +1,24 @@
+:root {
+  --couleur-primaire: #0B5F73;
+  --couleur-primaire-fonce: #084657;
+  --couleur-sur-primaire: #FFFFFF;
+  --couleur-texte: #1B2A33;
+  --couleur-texte-discret: #4A5861;
+  --couleur-fond: #FFFFFF;
+  --couleur-surface: #EEF4F6;
+  --couleur-alerte: #B3261E;
+
+  --police: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --taille-petit: 0.875rem;
+  --taille-base: 1rem;
+  --taille-h3: 1.125rem;
+  --taille-h2: 1.375rem;
+  --taille-h1: 1.75rem;
+  --taille-prix: 1.75rem;
+
+  --espace: 1rem;
+  --espace-grand: 2rem;
+  --rayon: 8px;
+  --cible: 44px;
+}

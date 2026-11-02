@@ -1,0 +1,100 @@
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+img { display: block; max-width: 100%; height: auto; }
+input, button { font: inherit; }
+
+body {
+  font-family: var(--police);
+  font-size: var(--taille-base);
+  line-height: 1.5;
+  color: var(--couleur-texte);
+  background: var(--couleur-fond);
+}
+h1 { font-size: var(--taille-h1); line-height: 1.2; }
+h2 { font-size: var(--taille-h2); line-height: 1.3; }
+h3 { font-size: var(--taille-h3); line-height: 1.3; }
+p { max-width: 65ch; }
+a { color: var(--couleur-primaire); }
+main { padding: var(--espace); }
+main > * + * { margin-top: var(--espace-grand); }
+
+:focus-visible { outline: 3px solid var(--couleur-primaire); outline-offset: 3px; }
+.evitement {
+  position: absolute; top: -100px; left: var(--espace);
+  padding: 0.5rem 1rem; background: var(--couleur-fond); z-index: 10;
+}
+.evitement:focus { top: var(--espace); }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+
+.liste-reset { list-style: none; padding: 0; }
+.btn {
+  min-height: var(--cible);
+  padding: 0 var(--espace);
+  border: 2px solid var(--couleur-primaire);
+  border-radius: var(--rayon);
+  background: var(--couleur-primaire);
+  color: var(--couleur-sur-primaire);
+  font-weight: 700;
+}
+.btn:hover:not(:disabled) { background: var(--couleur-primaire-fonce); }
+.btn:disabled {
+  background: var(--couleur-surface);
+  color: var(--couleur-texte-discret);
+  border: 2px dashed var(--couleur-texte-discret);
+}
+.stock { font-size: var(--taille-petit); }
+.stock-rupture { color: var(--couleur-alerte); font-weight: 700; }
+
+.entete {
+  padding: var(--espace);
+  background: var(--couleur-surface);
+  border-bottom: 2px solid var(--couleur-primaire);
+}
+.entete > * + * { margin-top: 0.75rem; }
+.logo { display: inline-block; }
+.logo img { height: 40px; width: auto; }
+.panier { position: relative; display: inline-block; margin-left: 2rem; line-height: var(--cible); }
+.panier::after {
+  content: ""; position: absolute; top: 8px; right: -14px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--couleur-alerte);
+}
+.menu-bouton { display: block; min-height: var(--cible); padding: 0 var(--espace); }
+.recherche label { display: block; font-weight: 700; }
+.recherche input, .recherche button { min-height: var(--cible); }
+.recherche input { width: 100%; padding: 0 0.5rem; border: 2px solid var(--couleur-texte-discret); border-radius: var(--rayon); }
+.recherche button { margin-top: 0.5rem; padding: 0 var(--espace); }
+.menu a { display: block; min-height: var(--cible); padding: 0.6rem 0; }
+.pied { display: none; }
+
+.carrousel .slide + .slide { margin-top: var(--espace); }
+.carrousel img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; border-radius: var(--rayon); }
+.carrousel p { margin-top: 0.5rem; font-weight: 700; }
+.categories h2, .top-produits h2 { margin-bottom: var(--espace); }
+.categories li + li, .top-produits li + li { margin-top: var(--espace); }
+.categories a { display: block; font-weight: 700; }
+.categories img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; border-radius: var(--rayon); margin-bottom: 0.5rem; }
+.produit {
+  padding: var(--espace);
+  background: var(--couleur-surface);
+  border-radius: var(--rayon);
+}
+.produit img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; border-radius: var(--rayon); }
+.produit h3 { margin-top: 0.5rem; }
+.produit .prix { font-weight: 700; }
+.produit:has(.stock-rupture) img { filter: grayscale(1); }
+
+.ariane li { display: inline; }
+.ariane li + li::before { content: " › "; }
+.fiche > * + * { margin-top: var(--espace); }
+.illustrations li + li { margin-top: 0.5rem; }
+.illustrations img { width: 100%; border-radius: var(--rayon); }
+.prix-fiche { font-size: var(--taille-prix); font-weight: 700; }
+.achat label { display: block; font-weight: 700; }
+.achat input { min-height: var(--cible); width: 6rem; padding: 0 0.5rem; }
+.achat .btn { display: block; width: 100%; margin-top: 0.75rem; }
+.caracteristiques h2 { margin-bottom: 0.5rem; }
+.caracteristiques dt { font-weight: 700; margin-top: 0.5rem; }
