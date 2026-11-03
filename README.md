@@ -20,9 +20,9 @@ Ouvrir `index.html` dans un navigateur. Pour vérifier le responsive, utiliser l
 
 1. Le CSS est mobile d’abord. Flexbox aligne les éléments de navigation, Grid compose les catégories et les résultats, et `srcset` propose des images de fiche en 400 et 800 px.
 2. Le produit épuisé est annoncé avec du texte, son achat est désactivé et sa photo est grisée. Les formulaires utilisent des libellés explicites et des méthodes POST pour les mots de passe.
-3. Les couleurs sont centralisées dans `css/variables.css` et s’adaptent au réglage clair ou sombre de l’appareil. Le mouvement respecte `prefers-reduced-motion`.
+3. Les couleurs sont centralisées dans `css/variables.css`. Le projet utilise actuellement une palette claire fixe, conformément au choix de design demandé. Le mouvement respecte `prefers-reduced-motion`.
 4. Chaque page porte une CSP adaptée au site statique. En production, la politique doit aussi être envoyée comme en-tête HTTP et les contrôles doivent être validés côté serveur.
 
 ## Vérification
 
-Les scores Lighthouse déjà consignés avant ce travail étaient Accueil 88/100 et Produit 100/100. Ils doivent être mesurés de nouveau dans le navigateur après les évolutions du Jour 2. Les validateurs HTML/CSS, essais de contraste, zoom, mode sombre, impression et largeurs mobiles restent à confirmer dans le navigateur avant publication. Les captures des dix vues demandées par le TP restent également à ajouter dans `docs/captures/`.
+Les scores Lighthouse déjà consignés avant ce travail étaient Accueil 88/100 et Produit 100/100. Ils doivent être mesurés de nouveau dans le navigateur après les évolutions du Jour 2. Les validateurs HTML/CSS, essais de contraste, zoom, impression et largeurs mobiles restent à confirmer dans le navigateur avant publication. Les captures des dix vues demandées par le TP restent également à ajouter dans `docs/captures/`. Le mode sombre automatique du TP n’est pas activé, car le projet conserve une palette claire fixe.

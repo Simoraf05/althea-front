@@ -59,29 +59,14 @@
   
         <nav class="menu" aria-label="Menu principal">
           <ul class="liste-reset">
-            <li>
-              <a href="index.html">Accueil</a>
-            </li>
-  
-            <li>
-              <a href="categorie.html">
-                Diagnostic
-              </a>
-            </li>
-  
-            <li>
-              <a href="connexion.html">Se connecter</a>
-            </li>
-  
-            <li>
-              <a href="inscription.html">S’inscrire</a>
-            </li>
-  
-            <li>
-              <a href="index.html#presentation">
-                À propos d’Althea Systems
-              </a>
-            </li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="categorie.html">Diagnostic</a></li>
+            <li><a href="index.html#conditions">Conditions générales</a></li>
+            <li><a href="index.html#mentions">Mentions légales</a></li>
+            <li><a href="mailto:contact@althea.example">Contact</a></li>
+            <li><a href="connexion.html">Se connecter</a></li>
+            <li><a href="inscription.html">S’inscrire</a></li>
+            <li><a href="index.html#presentation">À propos d’Althea Systems</a></li>
           </ul>
         </nav>
       </details>
@@ -123,6 +108,7 @@
     <article class="fiche">
       <h1>Tensiomètre électronique de bras</h1>
 
+      <div class="fiche-images">
       <section class="galerie" aria-label="Photos du produit">
         <ul class="liste-reset defile galerie" tabindex="0" aria-label="Photos du produit, faire défiler">
           <li><img src="img/tensiometre-400.svg" srcset="img/tensiometre-400.svg 400w, img/tensiometre-800.svg 800w" sizes="(min-width: 64rem) 50vw, 100vw" width="800" height="600" alt="Vue principale du tensiomètre électronique de bras"></li>
@@ -130,66 +116,52 @@
           <li><img src="img/tensiometre-detail-2-400.svg" srcset="img/tensiometre-detail-2-400.svg 400w, img/tensiometre-detail-2-800.svg 800w" sizes="(min-width: 64rem) 50vw, 100vw" width="800" height="600" alt="Détail du brassard du tensiomètre"></li>
         </ul>
       </section>
-
-      <div class="achat">
-        <p class="prix"><data value="49.90">49,90 €</data> TTC</p>
-        <p class="stock stock-rupture">Disponibilité : en rupture de stock</p>
-        <p class="description">Tensiomètre électronique destiné à mesurer la pression artérielle au bras. Son écran
-          facilite la lecture des résultats.</p>
-
-        <form action="panier.html" method="post">
-          <label for="quantite">Quantité</label>
-          <input id="quantite" name="quantite" type="number" min="1" value="1" disabled>
-          <button class="btn" type="submit" disabled>En rupture de stock</button>
-          <p class="aide-formulaire">Ce produit est actuellement indisponible à la vente.</p>
-        </form>
       </div>
 
-      <section class="caracteristiques" aria-labelledby="titre-caracteristiques">
-        <h2 id="titre-caracteristiques">Caractéristiques techniques</h2>
-        <dl>
-          <dt>Tour de bras</dt>
-          <dd>22 à 42 cm</dd>
-          <dt>Mémoire</dt>
-          <dd>2 utilisateurs, 99 mesures chacun</dd>
-          <dt>Poids</dt>
-          <dd>Environ 300 g sans piles</dd>
-          <dt>Tour de bras</dt>
-          <dd>22 à 42 cm</dd>
-          <dt>Mémoire</dt>
-          <dd>2 utilisateurs, 99 mesures chacun</dd>
-          <dt>Poids</dt>
-          <dd>Environ 300 g sans piles</dd>
-          <dt>Tour de bras</dt>
-          <dd>22 à 42 cm</dd>
-          <dt>Mémoire</dt>
-          <dd>2 utilisateurs, 99 mesures chacun</dd>
-          <dt>Poids</dt>
-          <dd>Environ 300 g sans piles</dd>
-          <dt>Tour de bras</dt>
-          <dd>22 à 42 cm</dd>
-          <dt>Mémoire</dt>
-          <dd>2 utilisateurs, 99 mesures chacun</dd>
-          <dt>Poids</dt>
-          <dd>Environ 300 g sans piles</dd>
-          <dt>Type</dt>
-          <dd>Tensiomètre électronique à bras</dd>
-          <dt>Affichage</dt>
-          <dd>Écran numérique</dd>
-          <dt>Utilisation</dt>
-          <dd>Mesure de la pression artérielle</dd>
-          <dt>Alimentation</dt>
-          <dd>Piles</dd>
-        </dl>
-        <div class="defile-tableau" tabindex="0" aria-labelledby="titre-tailles">
-          <table class="formats">
-            <caption id="titre-tailles">Tailles du brassard</caption>
-            <thead><tr><th scope="col">Taille</th><th scope="col">Tour de bras</th><th scope="col">Pour qui</th><th scope="col">Référence</th><th scope="col">Fourni</th></tr></thead>
-            <tbody><tr><th scope="row">Petit</th><td>17–22 cm</td><td>Bras fin</td><td>TB-P</td><td>Non</td></tr><tr><th scope="row">Standard</th><td>22–42 cm</td><td>Adulte</td><td>TB-S</td><td>Oui</td></tr><tr><th scope="row">Grand</th><td>32–52 cm</td><td>Bras large</td><td>TB-G</td><td>Non</td></tr></tbody>
-          </table>
+      <div class="fiche-infos">
+        <div class="achat">
+          <p class="prix"><data value="49.90">49,90 €</data> TTC</p>
+          <p class="stock stock-rupture">Disponibilité : en rupture de stock</p>
+          <form action="panier.html" method="post">
+            <label for="quantite">Quantité</label>
+            <input id="quantite" name="quantite" type="number" min="1" value="1" disabled>
+            <button class="btn" type="submit" disabled>En rupture de stock</button>
+            <p class="aide-formulaire">Ce produit est actuellement indisponible à la vente.</p>
+          </form>
         </div>
-        <p class="note-produit">Caractéristiques données à titre de contenu de démonstration pour le TP : à vérifier
-          avec la fiche réelle du fabricant avant toute publication commerciale.</p>
+      </div>
+
+      <section class="fiche-description">
+        <p class="description">Tensiomètre électronique destiné à mesurer la pression artérielle au bras. Son écran
+          facilite la lecture des résultats.</p>
+        <section class="caracteristiques" aria-labelledby="titre-caracteristiques">
+          <h2 id="titre-caracteristiques">Caractéristiques techniques</h2>
+          <dl>
+            <dt>Tour de bras</dt>
+            <dd>22 à 42 cm</dd>
+            <dt>Mémoire</dt>
+            <dd>2 utilisateurs, 99 mesures chacun</dd>
+            <dt>Poids</dt>
+            <dd>Environ 300 g sans piles</dd>
+            <dt>Type</dt>
+            <dd>Tensiomètre électronique à bras</dd>
+            <dt>Affichage</dt>
+            <dd>Écran numérique</dd>
+            <dt>Utilisation</dt>
+            <dd>Mesure de la pression artérielle</dd>
+            <dt>Alimentation</dt>
+            <dd>Piles</dd>
+          </dl>
+          <div class="defile-tableau" tabindex="0" aria-labelledby="titre-tailles">
+            <table class="formats">
+              <caption id="titre-tailles">Tailles du brassard</caption>
+              <thead><tr><th scope="col">Taille</th><th scope="col">Tour de bras</th><th scope="col">Pour qui</th><th scope="col">Référence</th><th scope="col">Fourni</th></tr></thead>
+              <tbody><tr><th scope="row">Petit</th><td>17–22 cm</td><td>Bras fin</td><td>TB-P</td><td>Non</td></tr><tr><th scope="row">Standard</th><td>22–42 cm</td><td>Adulte</td><td>TB-S</td><td>Oui</td></tr><tr><th scope="row">Grand</th><td>32–52 cm</td><td>Bras large</td><td>TB-G</td><td>Non</td></tr></tbody>
+            </table>
+          </div>
+          <p class="note-produit">Caractéristiques données à titre de contenu de démonstration pour le TP : à vérifier
+            avec la fiche réelle du fabricant avant toute publication commerciale.</p>
+        </section>
       </section>
     </article>
 

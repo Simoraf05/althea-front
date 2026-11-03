@@ -29,6 +29,7 @@ body {
   font-family: var(--police);
   font-size: var(--taille-base);
   line-height: 1.65;
+  overflow-wrap: anywhere;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -424,7 +425,7 @@ main > h1 + section {
 .pied a {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
+  min-height: var(--cible);
   color: var(--couleur-pied-lien);
   font-size: .92rem;
   text-decoration: none;
@@ -1242,15 +1243,9 @@ main > h1 + section {
   }
 
   .menu a {
-    padding-inline: .45rem;
-    font-size: .86rem;
-    white-space: nowrap;
-  }
-
-  .menu a {
-    min-height: 40px;
-    padding-inline: .5rem;
-    font-size: .85rem;
+    min-height: var(--cible);
+    padding-inline: .35rem;
+    font-size: .78rem;
     white-space: nowrap;
   }
 
@@ -1277,7 +1272,7 @@ main > h1 + section {
 
   .fiche {
     grid-template-columns: minmax(0, 1.1fr) minmax(20rem, .9fr);
-    grid-template-areas: "title title" "images infos" "specs infos";
+    grid-template-areas: "title title" "images infos" "description infos";
     gap: 1.5rem;
     padding: 2rem;
   }
@@ -1286,18 +1281,21 @@ main > h1 + section {
     grid-area: title;
   }
 
-  .fiche > .galerie {
+  .fiche > .fiche-images {
     grid-area: images;
+    min-width: 0;
   }
 
-  .fiche > .achat {
+  .fiche > .fiche-infos {
     position: sticky;
     inset-block-start: 7rem;
     grid-area: infos;
+    align-self: start;
   }
 
-  .fiche > .caracteristiques {
-    grid-area: specs;
+  .fiche > .fiche-description {
+    grid-area: description;
+    min-width: 0;
   }
 
   .galerie .defile {
@@ -1320,7 +1318,49 @@ main > h1 + section {
   }
 }
 
-@media (min-width: 82rem) {
+@media (min-width: 80rem) {
+  .entete {
+    grid-template-columns: auto minmax(0, 1fr) minmax(13rem, 18rem) auto;
+    grid-template-areas: "logo navigation recherche panier";
+    gap: .5rem;
+  }
+
+  .recherche-menu {
+    display: contents;
+  }
+
+  .navigation-mobile {
+    grid-area: navigation;
+    min-width: 0;
+  }
+
+  .menu ul {
+    gap: 0 .1rem;
+  }
+
+  .menu a {
+    padding-inline: .25rem;
+    font-size: .74rem;
+  }
+
+  .entete .recherche {
+    grid-area: recherche;
+    min-width: 0;
+  }
+
+  .entete .recherche button {
+    padding-inline: .65rem;
+    font-size: .82rem;
+  }
+
+  .panier-langues {
+    gap: .35rem;
+  }
+
+  .langues {
+    max-width: 6.2rem;
+  }
+
   .top-produits > ul,
   .similaires > ul,
   .produits {
@@ -1387,6 +1427,12 @@ main > h1 + section {
     background: #fff;
     border: 0;
     box-shadow: none;
+  }
+
+  .fiche-images,
+  .fiche-infos,
+  .fiche-description {
+    break-inside: avoid;
   }
 
   .galerie li:not(:first-child) {
