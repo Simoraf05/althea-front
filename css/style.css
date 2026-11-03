@@ -217,6 +217,13 @@ main > h1 + section {
   order: 3;
 }
 
+.recherche-menu {
+  display: grid;
+  gap: .7rem;
+  width: 100%;
+  min-width: 0;
+}
+
 .menu-bouton {
   position: relative;
   display: grid;
@@ -1236,7 +1243,7 @@ main > h1 + section {
   .menu ul {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     gap: .25rem .55rem;
     min-width: 0;
@@ -1341,6 +1348,7 @@ main > h1 + section {
   }
 
   .menu ul {
+    flex-wrap: nowrap;
     gap: 0 .15rem;
   }
 
