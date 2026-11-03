@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagnostic · Althea Systems</title>
+  <meta name="description" content="Équipements et matériel de diagnostic médical Althea Systems.">
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <!-- Logo -->
+    <p class="logo">
+      <a href="index.html" aria-label="Althea Systems, accueil">
+        <img src="img/logo.svg" alt="Althea Systems">
+      </a>
+    </p>
+  
+    <!-- Cart and language selector -->
+    <div class="panier-langues">
+      <p class="panier">
+        <a href="#panier" aria-label="Panier, 0 article">
+          Panier <span class="compteur">0</span>
+        </a>
+      </p>
+  
+      <select
+        class="langues"
+        id="choix-langue"
+        name="langue"
+        aria-label="Choisir la langue"
+      >
+        <option value="fr" lang="fr" selected>🇫🇷 Français</option>
+        <option value="en" lang="en">🇬🇧 English</option>
+        <option value="ar" lang="ar" dir="rtl">🌐 العربية</option>
+      </select>
+    </div>
+  
+    <!-- Navigation and search -->
+    <div class="recherche-menu">
+  
+      <details class="navigation-mobile">
+        <summary class="menu-bouton">
+          <span class="visually-hidden">Menu</span>
+        </summary>
+  
+        <nav class="menu" aria-label="Menu principal">
+          <ul class="liste-reset">
+            <li>
+              <a href="index.html">Accueil</a>
+            </li>
+  
+            <li>
+              <a href="categorie.html" aria-current="page">
+                Diagnostic
+              </a>
+            </li>
+  
+            <li>
+              <a href="connexion.html">Se connecter</a>
+            </li>
+  
+            <li>
+              <a href="inscription.html">S’inscrire</a>
+            </li>
+  
+            <li>
+              <a href="index.html#presentation">
+                À propos d’Althea Systems
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </details>
+  
+      <form
+        class="recherche"
+        action="recherche.html"
+        method="get"
+        role="search"
+      >
+        <label for="recherche-entete">
+          Rechercher un produit
+        </label>
+  
+        <input
+          id="recherche-entete"
+          name="q"
+          type="search"
+          placeholder="Ex. tensiomètre"
+        >
+  
+        <button type="submit">
+          Rechercher
+        </button>
+      </form>
+  
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="bandeau"><img src="img/categorie-diagnostic.svg" alt="" width="1280" height="720"><h1>Diagnostic</h1></section>
+    <p>Des équipements de diagnostic pour accompagner les professionnels de santé au quotidien.</p>
+    <section aria-labelledby="titre-produits-categorie"><h2 id="titre-produits-categorie">Les produits de la catégorie</h2><ul class="produits liste-reset"><li><article class="produit"><a href="produit.html"><img src="img/tensiometre.svg" alt="Tensiomètre électronique de bras"><h3>Tensiomètre électronique de bras</h3></a><p class="prix"><data value="49.90">49,90 €</data> TTC</p><p class="stock">En stock</p></article></li>
+<li><article class="produit"><a href="produit.html"><img src="img/oxymetre.svg" alt="Oxymètre de pouls"><h3>Oxymètre de pouls</h3></a><p class="prix"><data value="24.90">24,90 €</data> TTC</p><p class="stock">En stock</p></article></li>
+<li><article class="produit"><a href="produit.html"><img src="img/thermometre.svg" alt="Thermomètre sans contact"><h3>Thermomètre sans contact</h3></a><p class="prix"><data value="19.90">19,90 €</data> TTC</p><p class="stock">En stock</p></article></li>
+<li><article class="produit"><a href="produit.html"><img src="img/stethoscope.svg" alt="Stéthoscope double pavillon"><h3>Stéthoscope double pavillon</h3></a><p class="prix"><data value="35.00">35,00 €</data> TTC</p><p class="stock">En stock</p></article></li>
+<li><article class="produit"><a href="produit.html"><img src="img/glucometre.svg" alt="Glucomètre"><h3>Glucomètre</h3></a><p class="prix"><data value="29.90">29,90 €</data> TTC</p><p class="stock">En stock</p></article></li>
+<li><article class="produit"><a href="produit.html"><img src="img/tensiometre-poignet.svg" alt="Tensiomètre de poignet"><h3>Tensiomètre de poignet</h3></a><p class="prix"><data value="39.90">39,90 €</data> TTC</p><p class="stock stock-rupture">En rupture de stock</p></article></li></ul></section>
+    <nav class="pagination" aria-label="Pagination"><ul class="liste-reset"><li><a href="?page=1" aria-current="page"><span class="visually-hidden">Page </span>1</a></li><li><a href="?page=2"><span class="visually-hidden">Page </span>2</a></li><li><a href="?page=3"><span class="visually-hidden">Page </span>3</a></li><li><a href="?page=2">Suivant</a></li></ul></nav>
+  </main>
+
+  <footer class="pied">
+    <nav aria-label="Informations légales"><ul class="liste-reset"><li id="conditions"><a href="#conditions">Conditions générales</a></li><li id="mentions"><a href="#mentions">Mentions légales</a></li></ul></nav>
+    <nav aria-label="Contact"><ul class="liste-reset"><li><a href="mailto:contact@althea.example">Contact</a></li></ul></nav>
+    <nav aria-label="Réseaux sociaux"><ul class="liste-reset"><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="visually-hidden">(nouvel onglet)</span></a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram <span class="visually-hidden">(nouvel onglet)</span></a></li></ul></nav>
+    <p>© 2026 Althea Systems</p>
+  </footer>
+</body>
+
+</html>
