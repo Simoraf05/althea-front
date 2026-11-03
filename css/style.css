@@ -1320,37 +1320,43 @@ main > h1 + section {
 
 @media (min-width: 80rem) {
   .entete {
-    grid-template-columns: auto minmax(0, 1fr) minmax(13rem, 18rem) auto;
-    grid-template-areas: "logo navigation recherche panier";
-    gap: .5rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "logo panier"
+      "navigation navigation";
+    gap: .75rem 1.5rem;
   }
 
   .recherche-menu {
-    display: contents;
+    grid-area: navigation;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
   }
 
   .navigation-mobile {
-    grid-area: navigation;
     min-width: 0;
   }
 
   .menu ul {
-    gap: 0 .1rem;
+    gap: 0 .15rem;
   }
 
   .menu a {
-    padding-inline: .25rem;
-    font-size: .74rem;
-  }
-
-  .entete .recherche {
-    grid-area: recherche;
-    min-width: 0;
+    padding-inline: .3rem;
+    font-size: .78rem;
   }
 
   .entete .recherche button {
     padding-inline: .65rem;
     font-size: .82rem;
+  }
+
+  .entete .recherche {
+    min-width: 0;
+    flex: none;
   }
 
   .panier-langues {
@@ -1449,3 +1455,4 @@ main > h1 + section {
     content: " (" attr(href) ")";
   }
 }
+
