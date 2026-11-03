@@ -25,4 +25,7 @@ Ouvrir `index.html` dans un navigateur. Pour vérifier le responsive, utiliser l
 
 ## Vérification
 
-Les scores Lighthouse déjà consignés avant ce travail étaient Accueil 88/100 et Produit 100/100. Ils doivent être mesurés de nouveau dans le navigateur après les évolutions du Jour 2. Les validateurs HTML/CSS, essais de contraste, zoom, impression et largeurs mobiles restent à confirmer dans le navigateur avant publication. Les captures des dix vues demandées par le TP restent également à ajouter dans `docs/captures/`. Le mode sombre automatique du TP n’est pas activé, car le projet conserve une palette claire fixe.
+Le 3 novembre 2026, le validateur HTML W3C ne signale aucune erreur sur les six pages et le validateur CSS W3C valide `css/style.css` au profil CSS3 sans erreur.
+
+Les essais en mode appareil (320, 360, 768 et 1 280 px), le zoom à 200 %, le clavier, le contraste, la réduction des animations, l’aperçu avant impression, la console CSP et Lighthouse restent à vérifier dans un navigateur. Les scores Lighthouse historiques (Accueil 88/100, Produit 100/100) ne sont pas des résultats du Jour 2. Les dix captures demandées restent à ajouter dans `docs/captures/`. Le mode sombre automatique du TP n’est pas activé, car le projet conserve une palette claire fixe conformément au choix demandé.
+
