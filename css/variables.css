@@ -1,41 +1,52 @@
 :root {
-    --couleur-primaire: #1d4ed8;
-    --couleur-primaire-fonce: #1e40af;
-    --couleur-primaire-pale: #eff6ff;
-    --couleur-primaire-bord: #bfdbfe;
-    --couleur-sur-primaire: #ffffff;
-    --couleur-texte: #1f2937;
-    --couleur-texte-discret: #4b5563;
-    --couleur-fond: #f3f6fb;
-    --couleur-surface: #ffffff;
-    --couleur-alerte: #991b1b;
-    --couleur-alerte-fond: #fee2e2;
-    --couleur-succes: #166534;
-    --couleur-succes-fond: #dcfce7;
-    --couleur-pied: #111827;
-    --couleur-pied-texte: #e5e7eb;
-  
-    --police: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-  
-    --taille-xs: 0.75rem;
-    --taille-sm: 0.875rem;
-    --taille-base: 1rem;
-    --taille-lg: 1.25rem;
-    --taille-xl: 1.5rem;
-    --taille-h1: 1.75rem;
-  
-    --espace-mini: 0.25rem;
-    --espace-petit: 0.5rem;
-    --espace: 1rem;
-    --espace-grand: 1.5rem;
-    --espace-xl: 2.5rem;
-  
-    --rayon: 0.5rem;
-    --rayon-grand: 1rem;
-    --cible: 44px;
-    --bordure: 1px solid #dbe3ee;
-    --focus-epaisseur: 3px;
-    --ombre: 0 1px 2px rgb(15 23 42 / 6%), 0 4px 14px rgb(15 23 42 / 6%);
-    --ombre-survol: 0 8px 28px rgb(29 78 216 / 16%);
-    --largeur-max: 1200px;
-  }
+  color-scheme: light;
+
+  /* Fixed light palette: clear blue, cloud white and a warm amber accent. */
+  --couleur-primaire: #2d5bd1;
+  --couleur-primaire-fonce: #2447aa;
+  --couleur-primaire-pale: #edf3ff;
+  --couleur-primaire-bord: #c6d5f6;
+  --couleur-sur-primaire: #ffffff;
+  --couleur-accent: #92500a;
+  --couleur-texte: #182640;
+  --couleur-texte-discret: #52627c;
+  --couleur-fond: #f8faff;
+  --couleur-surface: #ffffff;
+  --couleur-surface-muted: #f3f6fc;
+  --couleur-surface-inactive: #edf0f5;
+  --couleur-bordure: #dce4f1;
+  --couleur-alerte: #a23138;
+  --couleur-alerte-fond: #fff0f0;
+  --couleur-alerte-pale: #fff5f5;
+  --couleur-succes: #20664b;
+  --couleur-succes-fond: #eaf7ef;
+  --couleur-pied: #eef3fc;
+  --couleur-pied-texte: #1c2b46;
+  --couleur-pied-texte-discret: #53627b;
+  --couleur-pied-lien: #2447aa;
+  --couleur-pied-bordure: #d2deef;
+
+  --police: "Aptos", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --taille-xs: .75rem;
+  --taille-sm: .875rem;
+  --taille-base: 1rem;
+  --taille-lg: 1.2rem;
+  --taille-xl: 1.5rem;
+  --taille-h1: clamp(2.2rem, 6vw, 4.4rem);
+
+  --espace-mini: .25rem;
+  --espace-petit: .5rem;
+  --espace: 1rem;
+  --espace-grand: 1.5rem;
+  --espace-xl: 2.5rem;
+
+  --rayon: .7rem;
+  --rayon-grand: 1.1rem;
+  --cible: 44px;
+  --focus-epaisseur: 3px;
+  --ombre-petite: 0 8px 24px rgb(24 38 64 / .055);
+  --ombre: 0 12px 32px rgb(24 38 64 / .09);
+  --ombre-grand: 0 18px 42px rgb(24 38 64 / .15);
+  --ombre-survol: 0 18px 42px rgb(45 91 209 / .16);
+  --largeur-max: 76rem;
+}
