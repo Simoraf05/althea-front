@@ -1,227 +1,363 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tensiomètre électronique de bras · Althea Systems</title>
-  <meta name="description" content="Consultez la fiche du tensiomètre électronique de bras Althea Systems.">
-  <meta property="og:title" content="Tensiomètre électronique de bras · Althea Systems">
-  <meta property="og:description" content="Tensiomètre de bras avec écran numérique, actuellement en rupture de stock.">
-  <meta property="og:image" content="https://example.com/img/tensiometre.svg">
-  <meta property="og:type" content="product">
-  <meta name="theme-color" content="#1d4ed8">
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="js/main.js"></script>
-</head>
-
-<body>
-  <a class="evitement" href="#contenu">Aller au contenu</a>
-
-  <header class="entete">
-    <!-- Logo -->
-    <p class="logo">
-      <a href="index.html" aria-label="Althea Systems, accueil">
-        <img src="img/logo.svg" alt="Althea Systems">
-      </a>
-    </p>
-  
-    <!-- Cart and language selector -->
-    <div class="panier-langues">
-      <p class="panier">
-        <a href="panier.html" aria-label="Panier, 0 article">Panier <span class="compteur">0</span><span class="visually-hidden compteur-texte">(0 article)</span></a>
-      </p>
-  
-      <select
-        class="langues"
-        id="choix-langue"
-        name="langue"
-        aria-label="Choisir la langue"
-      >
-        <option value="fr" lang="fr" selected>🇫🇷 Français</option>
-        <option value="en" lang="en">🇬🇧 English</option>
-        <option value="ar" lang="ar" dir="rtl">🌐 العربية</option>
-      </select>
-    </div>
-  
-    <!-- Navigation and search -->
-    <div class="recherche-menu">
-  
-      <div class="navigation-mobile">
-      <button class="menu-bouton" type="button" aria-expanded="true">
-        <span class="visually-hidden">Menu</span>
-      </button>
-      <nav class="menu" aria-label="Menu principal">
+  <head>
+    <meta charset="utf-8">
+    <!-- La CSP limite le chargement des ressources à celles du site. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tensiomètre électronique de bras · Althea Systems</title>
+    <meta name="description" content="Fiche du tensiomètre : photos, caractéristiques et tailles du brassard.">
+    <meta name="theme-color" content="#125c4c">
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta property="og:title" content="Tensiomètre électronique de bras · Althea Systems">
+    <meta property="og:description" content="Fiche produit, caractéristiques et tailles de brassard.">
+    <meta property="og:image" content="https://althea.example/img/tensiometre-face-800.jpg">
+    <meta property="og:type" content="product">
+  </head>
+  <body>
+    <!-- Ce lien permet de passer le menu quand on navigue au clavier. -->
+    <a class="evitement" href="#contenu">Aller au contenu</a>
+    <!-- En-tête commun : logo, recherche et liens du menu. -->
+    <header class="entete">
+      <a class="logo" href="index.html"><img src="img/logo.svg" alt="Althea Systems, accueil" width="240" height="60"></a>
+      <a class="panier" href="panier.html">Panier <span class="visually-hidden">(2 articles)</span></a>
+      <!-- details ouvre et ferme le menu sans JavaScript ; summary se commande au clavier. -->
+      <details class="navigation">
+        <summary class="menu-bouton"><span aria-hidden="true">☰</span> Menu</summary>
+        <nav id="menu-principal" class="menu" aria-label="Menu principal">
           <ul class="liste-reset">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="categorie.html">Diagnostic</a></li>
-            <li><a href="index.html#conditions">Conditions générales</a></li>
-            <li><a href="index.html#mentions">Mentions légales</a></li>
-            <li><a href="mailto:contact@althea.example">Contact</a></li>
-            <li><a href="connexion.html">Se connecter</a></li>
-            <li><a href="inscription.html">S’inscrire</a></li>
-            <li><a href="index.html#presentation">À propos d’Althea Systems</a></li>
+            <li>
+              <a href="index.html">Accueil</a>
+            </li>
+            <li>
+              <a href="categorie.html">Diagnostic</a>
+            </li>
+            <li>
+              <a href="connexion.html">Se connecter</a>
+            </li>
+            <li>
+              <a href="inscription.html">S’inscrire</a>
+            </li>
+            <li>
+              <a href="cgu.html">CGU</a>
+            </li>
+            <li>
+              <a href="mentions-legales.html">Mentions légales</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li>
+              <a href="a-propos.html">À propos d’Althea Systems</a>
+            </li>
           </ul>
+          <p class="langues">
+            Langue :
+            <a href="produit.html" lang="fr" hreflang="fr" aria-current="true">Français</a>
+            <a href="en/index.html" lang="en" hreflang="en">English</a>
+            <a href="ar/index.html" lang="ar" hreflang="ar" dir="rtl">العربية</a>
+          </p>
+          <p class="liens-mobile">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a> · <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a>
+          </p>
         </nav>
-    </div>
-  
-      <form
-        class="recherche"
-        action="recherche.html"
-        method="get"
-        role="search"
-      >
-        <label for="recherche-entete">
-          Rechercher un produit
-        </label>
-  
-        <input
-          id="recherche-entete"
-          name="q"
-          type="search"
-          placeholder="Ex. tensiomètre"
-        >
-  
-        <button type="submit">
-          Rechercher
-        </button>
+      </details>
+      <form class="recherche" role="search" action="recherche.html" method="get">
+        <label class="visually-hidden" for="q">Rechercher un produit</label>
+        <input id="q" name="q" type="search" placeholder="Quel matériel cherchez-vous ?">
+        <button type="submit">Rechercher</button>
       </form>
-  
-    </div>
-  </header>
 
-  <main id="contenu" class="produit-detail">
-    <nav class="ariane" aria-label="Fil d'Ariane">
-      <ol class="liste-reset">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="index.html#diagnostic">Diagnostic</a></li>
-        <li><a href="produit.html" aria-current="page">Tensiomètre électronique de bras</a></li>
-      </ol>
-    </nav>
-
-    <article class="fiche" data-id="tensiometre-bras">
-      <h1>Tensiomètre électronique de bras</h1>
-
-      <div class="fiche-images">
-      <section class="galerie" aria-label="Photos du produit">
-        <ul class="liste-reset defile galerie" tabindex="0" aria-label="Photos du produit, faire défiler">
-          <li><img src="img/tensiometre-400.svg" srcset="img/tensiometre-400.svg 400w, img/tensiometre-800.svg 800w" sizes="(min-width: 64rem) 50vw, 100vw" width="800" height="600" alt="Vue principale du tensiomètre électronique de bras"></li>
-          <li><img src="img/tensiometre-detail-1.svg" alt="Détail de l'écran du tensiomètre"></li>
-          <li><img src="img/tensiometre-detail-2-400.svg" srcset="img/tensiometre-detail-2-400.svg 400w, img/tensiometre-detail-2-800.svg 800w" sizes="(min-width: 64rem) 50vw, 100vw" width="800" height="600" alt="Détail du brassard du tensiomètre"></li>
-        </ul>
-      </section>
-      </div>
-
-      <div class="fiche-infos">
-        <div class="achat">
-          <p class="prix"><data value="49.90">49,90 €</data> TTC</p>
-          <p class="stock">Disponibilité vérifiée au chargement.</p>
-          <form action="panier.html" method="post">
+    </header>
+    <!-- main contient le contenu propre à cette page. -->
+    <main id="contenu" tabindex="-1">
+      <nav class="ariane" aria-label="Fil d’Ariane">
+        <ol class="liste-reset">
+          <li>
+            <a href="index.html">Accueil</a>
+          </li>
+          <li>
+            <a href="categorie.html">Diagnostic</a>
+          </li>
+          <li>
+            <a href="produit.html" aria-current="page">Tensiomètre électronique de bras</a>
+          </li>
+        </ol>
+      </nav>
+      <article class="fiche">
+        <!-- La galerie réutilise le défilement CSS du carrousel. -->
+        <section class="fiche-images" aria-label="Photos du produit">
+          <ul class="defile galerie liste-reset" tabindex="0" aria-label="Photos du tensiomètre, à faire défiler">
+            <li>
+              <img src="img/tensiometre-face-400.jpg" srcset="img/tensiometre-face-400.jpg 400w, img/tensiometre-face-800.jpg 800w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Tensiomètre de face avec son écran et son brassard" width="400" height="300">
+            </li>
+            <li>
+              <img src="img/tensiometre-cote-400.jpg" srcset="img/tensiometre-cote-400.jpg 400w, img/tensiometre-cote-800.jpg 800w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Tensiomètre vu de côté avec son brassard" width="400" height="300" loading="lazy">
+            </li>
+            <li>
+              <img src="img/tensiometre-accessoires-400.jpg" srcset="img/tensiometre-accessoires-400.jpg 400w, img/tensiometre-accessoires-800.jpg 800w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Tensiomètre avec sa boîte, ses piles et son câble" width="400" height="300" loading="lazy">
+            </li>
+          </ul>
+          <p class="aide">
+            Glissez pour voir les autres photos. Au clavier : Tab, puis les flèches.
+          </p>
+        </section>
+        <div class="fiche-infos">
+          <h1>Tensiomètre électronique de bras</h1>
+          <p>
+            Une lecture numérique claire et un brassard ajustable pour le quotidien du cabinet.
+          </p>
+          <p class="prix-fiche">
+            <data value="49.90">49,90 €</data> <span>TTC</span>
+          </p>
+          <p class="stock stock-rupture">
+            Disponibilité : en rupture de stock
+          </p>
+          <!-- disabled bloque la quantité et l’achat car le produit est épuisé. -->
+          <form class="achat" action="panier.html" method="post">
             <label for="quantite">Quantité</label>
-            <input id="quantite" name="quantite" type="number" min="1" max="10" value="1">
-            <button class="btn" type="submit">Ajouter au panier</button>
-            <p class="message-achat" aria-live="polite"></p>
-            <p class="aide-formulaire">Ce produit est actuellement indisponible à la vente.</p>
+            <input id="quantite" name="quantite" type="number" min="1" max="10" value="1" disabled>
+            <button class="btn" type="submit" disabled>En rupture de stock</button>
           </form>
         </div>
-      </div>
-
-      <section class="fiche-description">
-        <p class="description">Tensiomètre électronique destiné à mesurer la pression artérielle au bras. Son écran
-          facilite la lecture des résultats.</p>
-        <section class="caracteristiques" aria-labelledby="titre-caracteristiques">
-          <h2 id="titre-caracteristiques">Caractéristiques techniques</h2>
-          <dl>
-            <dt>Tour de bras</dt>
-            <dd>22 à 42 cm</dd>
-            <dt>Mémoire</dt>
-            <dd>2 utilisateurs, 99 mesures chacun</dd>
-            <dt>Poids</dt>
-            <dd>Environ 300 g sans piles</dd>
-            <dt>Type</dt>
-            <dd>Tensiomètre électronique à bras</dd>
-            <dt>Affichage</dt>
-            <dd>Écran numérique</dd>
-            <dt>Utilisation</dt>
-            <dd>Mesure de la pression artérielle</dd>
-            <dt>Alimentation</dt>
-            <dd>Piles</dd>
-          </dl>
-          <section class="defile-tableau" tabindex="0" aria-labelledby="titre-tailles">
-            <table class="formats">
-              <caption id="titre-tailles">Tailles du brassard</caption>
-              <thead><tr><th scope="col">Taille</th><th scope="col">Tour de bras</th><th scope="col">Pour qui</th><th scope="col">Référence</th><th scope="col">Fourni</th></tr></thead>
-              <tbody><tr><th scope="row">Petit</th><td>17–22 cm</td><td>Bras fin</td><td>TB-P</td><td>Non</td></tr><tr><th scope="row">Standard</th><td>22–42 cm</td><td>Adulte</td><td>TB-S</td><td>Oui</td></tr><tr><th scope="row">Grand</th><td>32–52 cm</td><td>Bras large</td><td>TB-G</td><td>Non</td></tr></tbody>
-            </table>
+        <div class="fiche-description">
+          <section class="caracteristiques" aria-labelledby="titre-carac">
+            <h2 id="titre-carac">Caractéristiques techniques</h2>
+            <p>
+              Un tensiomètre de bras avec affichage des mesures et mémorisation des résultats.
+            </p>
+            <dl>
+              <dt>
+                Tour de bras
+              </dt>
+              <dd>
+                22 à 42 cm
+              </dd>
+              <dt>
+                Mémoire
+              </dt>
+              <dd>
+                2 × 60 mesures
+              </dd>
+              <dt>
+                Alimentation
+              </dt>
+              <dd>
+                4 piles AAA
+              </dd>
+              <dt>
+                Poids
+              </dt>
+              <dd>
+                280 g
+              </dd>
+            </dl>
           </section>
-          <p class="note-produit">Caractéristiques données à titre de contenu de démonstration pour le TP : à vérifier
-            avec la fiche réelle du fabricant avant toute publication commerciale.</p>
-        </section>
+          <section class="tailles" aria-labelledby="titre-tailles">
+            <h2 id="titre-tailles">Choisir la taille du brassard</h2>
+            <p>
+              Mesurez le tour du bras à mi-distance entre l’épaule et le coude, avec un mètre souple.
+            </p>
+            <section class="defile-tableau" tabindex="0" aria-labelledby="tableau-tailles">
+              <!-- scope indique les titres des lignes et des colonnes. -->
+              <table>
+                <caption id="tableau-tailles">Tailles des brassards (exemples)</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Taille
+                    </th>
+                    <th scope="col">
+                      Tour de bras
+                    </th>
+                    <th scope="col">
+                      Pour qui
+                    </th>
+                    <th scope="col">
+                      Référence
+                    </th>
+                    <th scope="col">
+                      Fourni
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      Petit
+                    </th>
+                    <td>
+                      17–22 cm
+                    </td>
+                    <td>
+                      Bras fin
+                    </td>
+                    <td>
+                      ALT-BR-P
+                    </td>
+                    <td>
+                      Non
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Standard
+                    </th>
+                    <td>
+                      22–42 cm
+                    </td>
+                    <td>
+                      Bras moyen
+                    </td>
+                    <td>
+                      ALT-BR-S
+                    </td>
+                    <td>
+                      Oui
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Grand
+                    </th>
+                    <td>
+                      32–52 cm
+                    </td>
+                    <td>
+                      Bras large
+                    </td>
+                    <td>
+                      ALT-BR-G
+                    </td>
+                    <td>
+                      Non
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </section>
+        </div>
+      </article>
+      <section class="top-produits similaires" aria-labelledby="titre-similaires">
+        <h2 id="titre-similaires">Produits similaires</h2>
+        <ul class="liste-top liste-reset">
+          <li>
+            <article class="produit">
+              <img src="img/categorie-diagnostic.png" alt="" width="1448" height="1086" loading="lazy">
+              <h3><a href="produit.html">Kit de diagnostic médical</a></h3>
+              <p class="prix">
+                <data value="129.00">129,00 €</data> <span>TTC</span>
+              </p>
+              <p class="stock">
+                En stock
+              </p>
+            </article>
+          </li>
+          <li>
+            <article class="produit">
+              <img src="img/categorie-soins.png" alt="" width="1448" height="1086" loading="lazy">
+              <h3><a href="produit.html">Kit de soins</a></h3>
+              <p class="prix">
+                <data value="24.90">24,90 €</data> <span>TTC</span>
+              </p>
+              <p class="stock">
+                En stock
+              </p>
+            </article>
+          </li>
+          <li>
+            <article class="produit">
+              <img src="img/categorie-consommables.png" alt="" width="1448" height="1086" loading="lazy">
+              <h3><a href="produit.html">Lot de consommables médicaux</a></h3>
+              <p class="prix">
+                <data value="34.90">34,90 €</data> <span>TTC</span>
+              </p>
+              <p class="stock">
+                En stock
+              </p>
+            </article>
+          </li>
+          <li>
+            <article class="produit">
+              <img src="img/categorie-mobilier.png" alt="" width="1448" height="1086" loading="lazy">
+              <h3><a href="produit.html">Table d’examen</a></h3>
+              <p class="prix">
+                <data value="289.00">289,00 €</data> <span>TTC</span>
+              </p>
+              <p class="stock">
+                En stock
+              </p>
+            </article>
+          </li>
+          <li>
+            <article class="produit">
+              <img src="img/banniere-echographe.png" alt="" width="1448" height="1086" loading="lazy">
+              <h3><a href="produit.html">Échographe portable</a></h3>
+              <p class="prix">
+                <data value="2490.00">2 490,00 €</data> <span>TTC</span>
+              </p>
+              <p class="stock">
+                En stock
+              </p>
+            </article>
+          </li>
+          <li>
+            <article class="produit">
+              <img src="img/tensiometre-accessoires.png" alt="" width="1448" height="1086" loading="lazy">
+              <h3><a href="produit.html">Tensiomètre avec accessoires</a></h3>
+              <p class="prix">
+                <data value="159.00">159,00 €</data> <span>TTC</span>
+              </p>
+              <p class="stock">
+                En stock
+              </p>
+            </article>
+          </li>
+        </ul>
       </section>
-    </article>
-
-    <section class="avis" aria-labelledby="titre-avis"><h2 id="titre-avis">Avis clients</h2><p id="etat-avis" aria-live="polite">Chargement des avis…</p><ul id="liste-avis" class="liste-reset avis-liste"></ul></section>
-
-    <section class="similaires" aria-labelledby="titre-similaires">
-      <h2 id="titre-similaires">Produits similaires</h2>
-      <ul class="liste-reset">
-        <li>
-          <article class="produit">
-            <a href="produit.html">
-              <img src="img/oxymetre.svg" alt="Oxymètre de pouls">
-              <h3>Oxymètre de pouls</h3>
-            </a>
-            <p class="prix"><data value="24.90">24,90 €</data> TTC</p>
-            <p class="stock">En stock</p>
-          </article>
-        </li>
-        <li>
-          <article class="produit">
-            <a href="produit.html">
-              <img src="img/thermometre.svg" alt="Thermomètre sans contact">
-              <h3>Thermomètre sans contact</h3>
-            </a>
-            <p class="prix"><data value="19.90">19,90 €</data> TTC</p>
-            <p class="stock">En stock</p>
-          </article>
-        </li>
-        <li>
-          <article class="produit">
-            <a href="produit.html">
-              <img src="img/stethoscope.svg" alt="Stéthoscope double pavillon">
-              <h3>Stéthoscope double pavillon</h3>
-            </a>
-            <p class="prix"><data value="35.00">35,00 €</data> TTC</p>
-            <p class="stock">En stock</p>
-          </article>
-        </li>
-        <li>
-          <article class="produit">
-            <a href="produit.html">
-              <img src="img/tensiometre-poignet.svg" alt="Tensiomètre de poignet">
-              <h3>Tensiomètre de poignet</h3>
-            </a>
-            <p class="prix"><data value="39.90">39,90 €</data> TTC</p>
-            <p class="stock">En stock</p>
-          </article>
-        </li>
-        <li><article class="produit"><a href="produit.html"><img src="img/glucometre.svg" alt="Glucomètre"><h3>Glucomètre</h3></a><p class="prix">29,90 € TTC</p><p class="stock">En stock</p></article></li>
-        <li><article class="produit"><a href="produit.html"><img src="img/tensiometre-poignet.svg" alt="Tensiomètre de poignet"><h3>Tensiomètre de poignet</h3></a><p class="prix">39,90 € TTC</p><p class="stock">En stock</p></article></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="pied">
-    <nav aria-label="Informations légales"><ul class="liste-reset"><li id="conditions"><a href="#conditions">Conditions générales</a></li><li id="mentions"><a href="#mentions">Mentions légales</a></li></ul></nav>
-    <nav aria-label="Contact"><ul class="liste-reset"><li><a href="mailto:contact@althea.example">Contact</a></li></ul></nav>
-    <nav aria-label="Réseaux sociaux"><ul class="liste-reset"><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="visually-hidden">(nouvel onglet)</span></a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram <span class="visually-hidden">(nouvel onglet)</span></a></li></ul></nav>
-    <p>© 2026 Althea Systems</p>
-  </footer>
-</body>
-
+    </main>
+    <!-- Pied visible sur ordinateur ; sur mobile, les liens sont dans le menu. -->
+    <footer class="pied">
+      <nav aria-label="Informations légales">
+        <h2>Informations</h2>
+        <ul class="liste-reset">
+          <li>
+            <a href="cgu.html">CGU</a>
+          </li>
+          <li>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </li>
+        </ul>
+      </nav>
+      <nav aria-label="Contact">
+        <h2>Althea Systems</h2>
+        <ul class="liste-reset">
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="a-propos.html">À propos d’Althea Systems</a>
+          </li>
+        </ul>
+      </nav>
+      <nav aria-label="Réseaux sociaux">
+        <h2>Nous suivre</h2>
+        <ul class="liste-reset">
+          <li>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a>
+          </li>
+        </ul>
+      </nav>
+      <p>
+        © 2026 Althea Systems
+      </p>
+    </footer>
+  </body>
 </html>
-

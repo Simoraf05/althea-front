@@ -1,19 +1,33 @@
-# Protections · Althea Systems
+# Sécurité et formulaires
 
-| Où | Protection | Contre quoi | Limite |
-|---|---|---|---|
-| Toutes les pages | CSP `default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'` | Ressources externes non prévues, plugins, détournement de base et soumission vers un tiers | En production, envoyer aussi la CSP dans un en-tête HTTP. |
-| Toutes les pages | `strict-origin-when-cross-origin` | Réduit les informations de provenance transmises aux autres sites | Ne remplace pas une politique serveur. |
-| Recherche | `method="get"` | Permet de partager des filtres non secrets | Ne jamais y envoyer de mot de passe. |
-| Connexion et inscription | `method="post"`, types et autocomplete adaptés | Évite d’exposer le mot de passe dans l’URL et aide le navigateur | Le serveur doit revérifier toutes les entrées et appliquer TLS. |
-| Liens externes | HTTPS, `noopener noreferrer`, annonce du nouvel onglet | Protège le transport et l’onglet d’origine | Vérifier les URL avant publication. |
-| Dépôt | `.gitignore` | Évite d’ajouter secrets et fichiers locaux | Vérifier qu’aucun secret n’a déjà été suivi par Git. |
+Le projet contient seulement du HTML et du CSS. Les formulaires préparent la saisie des informations, mais aucun serveur ne gère les comptes.
 
-## XSS (injection de HTML ou de script)
+## Choix dans les pages
 
-Un nom de produit, une recherche dans l’URL ou un avis sont des données non fiables. Les interpréter avec `innerHTML` pourrait exécuter du code dans la page et agir au nom du visiteur.
+| Protection | Où | Rôle |
+|---|---|---|
+| CSP et referrer | Head des six pages | Limiter les ressources au site et les informations transmises aux autres sites. |
+| POST | Connexion et inscription | Garder les mots de passe hors de l’adresse. HTTPS sera nécessaire en production. |
+| required, type et minlength | Champs des formulaires | Aider à corriger les saisies invalides. |
+| noopener noreferrer | Liens ouverts dans un nouvel onglet | Protéger l’onglet d’origine. |
+| .gitignore | Racine du projet | Exclure les secrets et les fichiers locaux. |
 
-Les modules créent les éléments avec `document.createElement`, puis affectent chaque valeur avec `textContent`. Ils n’utilisent pas `innerHTML` pour afficher des données. La CSP `default-src 'self'` bloque aussi l’exécution de scripts inline.
+Une politique CSP est ajoutée dans le `head` des six pages. Elle limite le chargement des ressources à celles du site et bloque notamment les scripts et styles intégrés directement au HTML. Une balise `referrer` limite aussi les informations d’adresse transmises vers les autres sites.
 
-Le catalogue conserve volontairement le nom de test `Gants nitrile <img src="x" onerror="alert(1)">`. Le fichier `data/avis.json` contient également un texte d’avis piégé et une note invalide. Ces valeurs doivent rester visibles comme du texte ; l’avis noté 50 est écarté. Les scénarios interactifs sont listés dans `docs/tests-js.md`.
+Les liens externes ouverts dans un nouvel onglet utilisent `rel="noopener noreferrer"`. Le texte « nouvel onglet » est prévu pour les lecteurs d’écran.
 
+## Formulaires
+
+La recherche utilise `GET` : les critères sont placés dans l’adresse. La connexion et l’inscription utilisent `POST` pour éviter de mettre les mots de passe dans l’URL. POST ne chiffre pas les données : un site publié avec de vrais comptes devra utiliser HTTPS.
+
+Les attributs `required`, `type="email"`, `minlength` et `maxlength` vérifient une partie de la saisie dans le navigateur. Les champs de compte utilisent aussi `autocomplete` pour les gestionnaires de mots de passe.
+
+Ces contrôles peuvent être contournés. Le serveur devra vérifier les données et comparer les deux mots de passe de l’inscription. Avec Live Server, l’envoi des formulaires de compte peut afficher « Cannot POST », car aucun traitement n’est prévu.
+
+## Tests enregistrés
+
+- Un style ajouté directement sur le titre a été bloqué par la CSP, puis retiré.
+- L’envoi d’un mot de passe fictif en POST ne l’a pas placé dans l’adresse.
+- En retirant `required`, un formulaire vide a pu être envoyé. Cela montre pourquoi les contrôles du navigateur ne suffisent pas.
+
+Le fichier `.gitignore` sert à ne pas ajouter les secrets et les fichiers locaux au dépôt. Lors de la mise en place du serveur, la CSP pourra aussi être envoyée dans les en-têtes HTTP.

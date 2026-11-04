@@ -1,104 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Se connecter · Althea Systems</title>
-  <meta name="description" content="Connectez-vous à votre compte Althea Systems.">
-  <meta name="theme-color" content="#1d4ed8">
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="js/main.js"></script>
-</head>
-
-<body>
-  <a class="evitement" href="#contenu">Aller au contenu</a>
-
-  <header class="entete">
-    <!-- Logo -->
-    <p class="logo">
-      <a href="index.html" aria-label="Althea Systems, accueil">
-        <img src="img/logo.svg" alt="Althea Systems">
-      </a>
-    </p>
-  
-    <!-- Cart and language selector -->
-    <div class="panier-langues">
-      <p class="panier">
-        <a href="panier.html" aria-label="Panier, 0 article">Panier <span class="compteur">0</span><span class="visually-hidden compteur-texte">(0 article)</span></a>
-      </p>
-  
-      <select
-        class="langues"
-        id="choix-langue"
-        name="langue"
-        aria-label="Choisir la langue"
-      >
-        <option value="fr" lang="fr" selected>🇫🇷 Français</option>
-        <option value="en" lang="en">🇬🇧 English</option>
-        <option value="ar" lang="ar" dir="rtl">🌐 العربية</option>
-      </select>
-    </div>
-  
-    <!-- Navigation and search -->
-    <div class="recherche-menu">
-  
-      <div class="navigation-mobile">
-      <button class="menu-bouton" type="button" aria-expanded="true">
-        <span class="visually-hidden">Menu</span>
-      </button>
-      <nav class="menu" aria-label="Menu principal">
+  <head>
+    <meta charset="utf-8">
+    <!-- La CSP limite le chargement des ressources à celles du site. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Se connecter · Althea Systems</title>
+    <meta name="description" content="Connexion à votre espace Althea Systems.">
+    <meta name="theme-color" content="#125c4c">
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Ce lien permet de passer le menu quand on navigue au clavier. -->
+    <a class="evitement" href="#contenu">Aller au contenu</a>
+    <!-- En-tête commun : logo, recherche et liens du menu. -->
+    <header class="entete">
+      <a class="logo" href="index.html"><img src="img/logo.svg" alt="Althea Systems, accueil" width="240" height="60"></a>
+      <a class="panier" href="panier.html">Panier <span class="visually-hidden">(2 articles)</span></a>
+      <!-- details ouvre et ferme le menu sans JavaScript ; summary se commande au clavier. -->
+      <details class="navigation">
+        <summary class="menu-bouton"><span aria-hidden="true">☰</span> Menu</summary>
+        <nav id="menu-principal" class="menu" aria-label="Menu principal">
           <ul class="liste-reset">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="categorie.html">Diagnostic</a></li>
-            <li><a href="index.html#conditions">Conditions générales</a></li>
-            <li><a href="index.html#mentions">Mentions légales</a></li>
-            <li><a href="mailto:contact@althea.example">Contact</a></li>
-            <li><a href="connexion.html" aria-current="page">Se connecter</a></li>
-            <li><a href="inscription.html">S’inscrire</a></li>
-            <li><a href="index.html#presentation">À propos d’Althea Systems</a></li>
+            <li>
+              <a href="index.html">Accueil</a>
+            </li>
+            <li>
+              <a href="categorie.html">Diagnostic</a>
+            </li>
+            <li>
+              <a href="connexion.html" aria-current="page">Se connecter</a>
+            </li>
+            <li>
+              <a href="inscription.html">S’inscrire</a>
+            </li>
+            <li>
+              <a href="cgu.html">CGU</a>
+            </li>
+            <li>
+              <a href="mentions-legales.html">Mentions légales</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li>
+              <a href="a-propos.html">À propos d’Althea Systems</a>
+            </li>
           </ul>
+          <p class="langues">
+            Langue :
+            <a href="connexion.html" lang="fr" hreflang="fr" aria-current="true">Français</a>
+            <a href="en/index.html" lang="en" hreflang="en">English</a>
+            <a href="ar/index.html" lang="ar" hreflang="ar" dir="rtl">العربية</a>
+          </p>
+          <p class="liens-mobile">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a> · <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a>
+          </p>
         </nav>
-    </div>
-  
-      <form
-        class="recherche"
-        action="recherche.html"
-        method="get"
-        role="search"
-      >
-        <label for="recherche-entete">
-          Rechercher un produit
-        </label>
-  
-        <input
-          id="recherche-entete"
-          name="q"
-          type="search"
-          placeholder="Ex. tensiomètre"
-        >
-  
-        <button type="submit">
-          Rechercher
-        </button>
+      </details>
+      <form class="recherche" role="search" action="recherche.html" method="get">
+        <label class="visually-hidden" for="q">Rechercher un produit</label>
+        <input id="q" name="q" type="search" placeholder="Quel matériel cherchez-vous ?">
+        <button type="submit">Rechercher</button>
       </form>
-  
-    </div>
-  </header>
 
-  <main id="contenu"><h1>Se connecter</h1><form class="formulaire" action="connexion.html" method="post"><p><label for="email">Adresse e-mail (obligatoire)</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required><span class="erreur">Saisissez une adresse e-mail valide.</span></p><p><label for="mdp">Mot de passe (obligatoire)</label><input id="mdp" name="mdp" type="password" autocomplete="current-password" required><span class="erreur">Saisissez votre mot de passe.</span></p><p><a href="mailto:contact@althea.example?subject=Mot%20de%20passe%20oubli%C3%A9">Mot de passe oublié ?</a></p><button class="btn" type="submit">Se connecter</button><p>Pas encore de compte ? <a href="inscription.html">Créer un compte</a></p></form></main>
-
-  <footer class="pied">
-    <nav aria-label="Informations légales"><ul class="liste-reset"><li id="conditions"><a href="#conditions">Conditions générales</a></li><li id="mentions"><a href="#mentions">Mentions légales</a></li></ul></nav>
-    <nav aria-label="Contact"><ul class="liste-reset"><li><a href="mailto:contact@althea.example">Contact</a></li></ul></nav>
-    <nav aria-label="Réseaux sociaux"><ul class="liste-reset"><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="visually-hidden">(nouvel onglet)</span></a></li><li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram <span class="visually-hidden">(nouvel onglet)</span></a></li></ul></nav>
-    <p>© 2026 Althea Systems</p>
-  </footer>
-</body>
-
+    </header>
+    <!-- main contient le contenu propre à cette page. -->
+    <main id="contenu" tabindex="-1">
+      <div class="intro compte-intro">
+        <h1>Se connecter</h1>
+      </div>
+      <!-- POST envoie les champs dans le corps de la requête, pas dans l’adresse. -->
+      <!-- required rend les champs obligatoires ; le serveur reste à faire. -->
+      <form class="formulaire" action="connexion.html" method="post">
+        <p>
+          <label for="email">Adresse e-mail (obligatoire)</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="erreur-email" >
+          <span id="erreur-email" class="erreur">Saisissez une adresse e-mail valide.</span>
+        </p>
+        <p>
+          <label for="mdp">Mot de passe (obligatoire)</label>
+          <input id="mdp" name="mdp" type="password" autocomplete="current-password" required aria-describedby="erreur-mdp" >
+          <span id="erreur-mdp" class="erreur">Saisissez votre mot de passe.</span>
+        </p>
+        <p>
+          <a href="mot-de-passe-oublie.html">Mot de passe oublié ?</a>
+        </p>
+        <button class="btn" type="submit">Se connecter</button>
+        <p>
+          Pas encore de compte ? <a href="inscription.html">Créer un compte</a>
+        </p>
+      </form>
+    </main>
+    <!-- Pied visible sur ordinateur ; sur mobile, les liens sont dans le menu. -->
+    <footer class="pied">
+      <nav aria-label="Informations légales">
+        <h2>Informations</h2>
+        <ul class="liste-reset">
+          <li>
+            <a href="cgu.html">CGU</a>
+          </li>
+          <li>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </li>
+        </ul>
+      </nav>
+      <nav aria-label="Contact">
+        <h2>Althea Systems</h2>
+        <ul class="liste-reset">
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="a-propos.html">À propos d’Althea Systems</a>
+          </li>
+        </ul>
+      </nav>
+      <nav aria-label="Réseaux sociaux">
+        <h2>Nous suivre</h2>
+        <ul class="liste-reset">
+          <li>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a>
+          </li>
+        </ul>
+      </nav>
+      <p>
+        © 2026 Althea Systems
+      </p>
+    </footer>
+  </body>
 </html>
-

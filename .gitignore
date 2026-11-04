@@ -1,7 +1,8 @@
 .env
+.env.*
+!.env.example
 *.key
 .DS_Store
 Thumbs.db
 .vscode/
 node_modules/
-.history/

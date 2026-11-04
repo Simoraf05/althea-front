@@ -1,79 +1,69 @@
-# Plan des interfaces · Althea
+# Analyse des pages — TP 1 et TP 2
 
-## 1. Sur toutes les pages
+## Éléments communs
 
-En-tête (header), de haut en bas :
+Chaque page reprend le même en-tête : logo, panier, menu repliable (`details` et `summary`), recherche et navigation. Le logo renvoie à l’accueil. Le panier contient deux articles de démonstration : un point le signale visuellement et un texte caché donne le nombre au lecteur d’écran. La recherche utilise un formulaire avec un champ de type `search`.
 
-- le lien d'évitement « Aller au contenu » (premier lien de la page) ... a
-- le logo, qui ramène à l'accueil ........................................ a + img
-- le panier, avec le nombre d'articles ................................... a
-- le nombre d'articles, lu à voix haute mais caché (pour le point rouge) . span.visually-hidden
-- le bouton Menu ......................................................... button
-- la recherche ........................................................... form, label, input, button
-- les liens du menu (Accueil, Catalogue, Mon compte, CGU,
-  Mentions légales, Contact) ............................................. nav, ul, li, a
+Le contenu principal est dans `main`. Le lien « Aller au contenu », placé au début de la page, permet d’y accéder au clavier sans parcourir tout le menu.
 
-Pied (footer) : CGU, Mentions légales, Contact, LinkedIn, Instagram, © 2026 Althea Systems ... ul, li, a, p
+Le pied de page contient les liens d’information et les réseaux sociaux. Il est masqué sur les petits écrans. Ses liens sont aussi dans le menu pour rester accessibles.
 
-Sur téléphone : le pied est caché, ses liens (CGU, Mentions légales, Contact) sont déjà dans le menu.
+## TP 1 : accueil et fiche produit
 
-## 2. Page Accueil (index.html)
+### Accueil — index.html
 
-| # | Bloc | Ce qu'on y met | Balise |
-|---|------|----------------|--------|
-| 1 | Titre | « Le matériel médical fiable, livré à votre cabinet » | h1 |
-| 2 | Carrousel | 3 slides : image, phrase, lien | section, ul, li, img, p, a |
-| 3 | Présentation | 2 phrases sur Althea (depuis quand, ce qu'elle garantit) | p |
-| 4 | Catégories | h2 « Nos catégories » + 4 liens : Diagnostic, Soins, Mobilier, Consommables (image + nom) | section, h2, ul, a, img |
-| 5 | Top Produits | h2 « Les Top Produits du moment » + 4 cartes | section, h2, ul, article |
+| Partie | Contenu | Balises principales |
+|---|---|---|
+| Introduction | Titre et présentation | `h1`, `p` |
+| Carrousel | Trois images avec texte et lien | `section`, `ul`, `li`, `img`, `a` |
+| Catégories | Diagnostic, Soins, Mobilier et Consommables | `section`, `h2`, `ul`, `a` |
+| Top produits | Quatre cartes avec nom, image, prix et stock | `article`, `h3`, `img`, `data`, `p` |
 
-- Carte « Top Produits » : une image, le nom (h3 avec lien vers produit.html), le prix (p + data), le stock (p).
-- Une des 4 cartes est en rupture : texte « En rupture de stock ».
+Les pastilles du carrousel sont des liens vers les trois images. Il n’y a pas de défilement automatique.
 
-## 3. Page Produit (produit.html)
+### Fiche produit — produit.html
 
-Produit choisi : Tensiomètre électronique de bras, 49,90 € TTC.
+| Partie | Contenu | Balises principales |
+|---|---|---|
+| Fil d’Ariane | Chemin depuis l’accueil | `nav`, `ol`, `a` |
+| Galerie | Trois vues du produit | `section`, `ul`, `img` |
+| Informations | Nom, description, prix et stock | `h1`, `p`, `data` |
+| Achat | Quantité et bouton désactivés | `form`, `label`, `input`, `button` |
+| Caractéristiques | Détails du produit et tableau des tailles | `dl`, `dt`, `dd`, `table` |
+| Produits similaires | Six cartes produit | `section`, `h2`, `ul`, `article` |
 
-| # | Bloc | Ce qu'on y met | Balise |
-|---|------|----------------|--------|
-| 1 | Fil d'Ariane | Accueil › Diagnostic › Tensiomètre électronique de bras | nav, ol, li, a |
-| 2 | Nom | le nom du produit, en grand | h1 |
-| 3 | Photos | 3 vues du produit, un alt différent chacune | section, ul, li, img |
-| 4 | Description | une ou deux phrases | p |
-| 5 | Prix | 49,90 € TTC | p, data |
-| 6 | Disponibilité | « Disponibilité : en rupture de stock » | p |
-| 7 | Achat | quantité + bouton « En rupture de stock » | form, label, input, button |
-| 8 | Caractéristiques | tour de bras, mémoire, alimentation, poids | section, h2, dl, dt, dd |
-| 9 | Similaires | h2 « Produits similaires » + 6 cartes | section, h2, ul, article |
+La rupture de stock est indiquée en texte et pas seulement par une couleur. L’achat est bloqué avec l’attribut `disabled`.
 
-Produit épuisé :
+## TP 2 : pages ajoutées
 
-- le texte « En rupture de stock » est écrit dans la page (pas seulement une couleur) ;
-- le champ quantité et le bouton sont désactivés (`disabled`) ;
-- le bouton affiche « En rupture de stock » ;
-- côté CSS : bouton en pointillés, image grisée.
+### Catégorie — categorie.html
 
-## 4. Les morceaux qui reviennent
+La page Diagnostic contient un bandeau, une grille de produits et une pagination. Les cartes reprennent la même présentation que sur l’accueil. Les liens de pagination changent le paramètre dans l’adresse, mais la liste reste identique pour le moment.
 
-| Morceau | Pages | Classe |
-|---------|-------|--------|
-| En-tête | toutes | entete |
-| Logo | toutes | logo |
-| Panier | toutes | panier |
-| Bouton Menu | toutes | menu-bouton |
-| Recherche | toutes | recherche |
-| Menu | toutes | menu |
-| Pied de page | toutes | pied |
-| Carrousel | accueil | carrousel |
-| Slide | accueil | slide |
-| Catégories | accueil | categories |
-| Liste de produits | accueil, produit | top-produits |
-| Carte produit | accueil, produit | produit |
-| Prix (carte) | accueil, produit | prix |
-| Stock | accueil, produit | stock |
-| Stock épuisé | accueil, produit | stock-rupture |
-| Fil d'Ariane | produit | ariane |
-| Fiche produit | produit | fiche |
-| Formulaire d'achat | produit | achat |
-| Bouton | produit | btn |
-| Caractéristiques | produit | caracteristiques |
+### Recherche — recherche.html
+
+Le formulaire propose des critères sur le nom, la description, les caractéristiques, le prix, les catégories et la disponibilité. Une liste permet de choisir le tri. Les champs liés sont regroupés avec `fieldset` et `legend`.
+
+Six produits sont affichés à côté des filtres sur ordinateur et en dessous sur téléphone. Le filtrage n’est pas encore programmé.
+
+### Connexion — connexion.html
+
+Le formulaire contient l’adresse e-mail et le mot de passe. Les deux champs sont obligatoires. Les labels indiquent ce qui doit être saisi et `autocomplete` aide à remplir les informations du compte.
+
+### Inscription — inscription.html
+
+Le formulaire demande le prénom, le nom, l’adresse e-mail, le mot de passe et sa confirmation. Une case obligatoire permet d’accepter les CGU. Le mot de passe demande au moins 12 caractères. Les deux mots de passe ne sont pas encore comparés.
+
+## Classes réutilisées
+
+| Élément | Classes |
+|---|---|
+| En-tête et navigation | `entete`, `logo`, `panier`, `menu`, `recherche` |
+| Carte produit | `produit`, `prix`, `stock`, `stock-rupture` |
+| Grille de produits | `produits` |
+| Défilement du carrousel et de la galerie | `defile` |
+| Boutons | `btn` |
+| Formulaires de compte | `formulaire` |
+| Pied de page | `pied` |
+
+Les couleurs et les espacements sont dans `variables.css`. La mise en page, les media queries et les styles d’impression sont dans `style.css`.

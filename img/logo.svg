@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40" role="img" aria-label="Althea Systems"><rect width="40" height="40" rx="9" fill="#1d4ed8"/><path d="M17 9h6v8h8v6h-8v8h-6v-8H9v-6h8z" fill="#fff"/><text x="50" y="26" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#1f2937">Althea Systems</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60">
+  <title>Althea Systems</title>
+  <rect x="2" y="5" width="50" height="50" rx="15" fill="#125c4c"/>
+  <path d="M27 17v26M14 30h26" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  <text x="65" y="34" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#20382e">Althea</text>
+  <text x="67" y="50" font-family="Arial, sans-serif" font-size="10" letter-spacing="5" fill="#125c4c">SYSTEMS</text>
+</svg>

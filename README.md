@@ -1,51 +1,43 @@
-# Althea Systems · site vitrine front-end
+# Althea Systems — TP 1 et TP 2
 
-Projet pédagogique HTML, CSS et JavaScript ES6 pour une boutique de matériel médical. Le site comprend l’accueil, un catalogue, une fiche produit, la recherche, le panier, la connexion et l’inscription.
+Projet de bachelor : créer les pages d’un site de matériel médical en HTML et CSS.
 
-## Arborescence
+## Ouvrir le site
 
-```text
-index.html, categorie.html, produit.html, recherche.html, panier.html
-connexion.html, inscription.html
-css/variables.css, css/style.css
-js/produits.js, js/tri.js, js/outils.js, js/catalogue.js, js/recherche.js
-js/panier.js, js/icone-panier.js, js/vue-panier.js, js/fiche.js, js/avis.js
-js/menu.js, js/carrousel.js, js/tests.js, js/main.js
-data/avis.json
-img/ (logo, icônes, catégories, produits et images adaptatives)
-docs/ (analyse, audit, sécurité, responsive et tests JavaScript)
-```
+Ouvrir le dossier dans VS Code, puis lancer `index.html` avec Live Server. Il n’y a pas de dépendance à installer.
 
-## Démarrer
+## Contenu du projet
 
-Ouvrir le dossier dans VS Code puis lancer `index.html` avec Live Server. Les modules JavaScript et `fetch` nécessitent un serveur local ; l’ouverture directe par `file://` ne suffit pas. Pour lancer les tests des fonctions, ouvrir `categorie.html?tests`.
+Le TP 1 concerne l’accueil et la fiche produit : navigation, images, prix, stock et caractéristiques.
 
-Les formulaires de connexion et d’inscription restent des maquettes front-end : aucun serveur de compte n’est fourni.
+Le TP 2 ajoute les pages catégorie, recherche, connexion et inscription. La mise en page s’adapte au téléphone, à la tablette et à l’ordinateur avec Flexbox, Grid et des media queries.
 
-## JavaScript (Jour 3)
+Le menu utilise `details` et `summary` pour fonctionner sans JavaScript. Le mode sombre suit les préférences de l’appareil. La fiche produit contient un tableau des tailles et une version pour l’impression.
 
-- `js/produits.js` contient les données du catalogue et `trouverProduit(id)`.
-- `js/tri.js` trie une copie : produits prioritaires en premier, autres ensuite, épuisés toujours à la fin. Les tris par prix conservent cette règle.
-- `js/outils.js` formate les prix en euros.
-- `js/catalogue.js` crée les cartes et écrit les données avec `textContent`.
-- `js/recherche.js` normalise les accents et applique les critères issus de l’URL.
-- `js/panier.js` gère l’état, le total, le stockage validé et le rechargement entre onglets.
-- `js/icone-panier.js` met à jour le nombre annoncé et le point du panier.
-- `js/vue-panier.js` dessine les lignes, les sous-totaux et le total.
-- `js/fiche.js` vérifie les quantités et bloque les achats indisponibles.
-- `js/avis.js` charge les avis JSON, contrôle les notes et les affiche sans interpréter leur texte.
-- `js/menu.js` gère le menu au clavier, son état ARIA et la touche Échap.
-- `js/carrousel.js` commande les slides et synchronise les pastilles avec leur visibilité.
-- `js/tests.js` lance les dix tests accessibles via `categorie.html?tests`.
-- `js/main.js` initialise les fonctions partagées et les éléments présents sur la page.
+## Organisation
 
-La règle XSS du projet : toute donnée variable est affichée comme du texte avec `textContent`, jamais comme du HTML avec `innerHTML`. Les saisies et les données relues dans `localStorage` sont vérifiées en JavaScript.
+- Les pages sont à la racine du projet.
+- `css/variables.css` contient les couleurs et les valeurs communes.
+- `css/style.css` contient la mise en page.
+- `img/` contient les images.
+- `docs/` contient [l’analyse](docs/analyse.md), [les tests](docs/audit.md), [le responsive](docs/responsive.md) et [la sécurité](docs/securite.md).
 
-## Couleurs et responsive
+## Responsive et vérifications
 
-Les couleurs sont définies dans `css/variables.css`. La palette reste claire conformément à la demande du projet. Les mises en page s’adaptent aux écrans mobiles et larges ; le menu mobile se ferme avec Échap et rend le focus à son bouton.
+Sur téléphone, les blocs sont empilés. Sur les écrans plus larges, les produits passent en grille et la fiche produit en deux colonnes. La galerie et le tableau défilent dans leur bloc pour ne pas faire dépasser la page.
 
-## Vérification
+Les tests à 320, 360, 768 et 1 280 px ne montrent pas de débordement. Le contrôle Lighthouse du 4 novembre 2026 donne 100/100 en accessibilité sur les six pages. Les validations officielles W3C et les vérifications manuelles restantes sont indiquées dans l’audit.
 
-Les tests JavaScript sont documentés dans `docs/tests-js.md`. Les contrôles interactifs en navigateur restent à réaliser : parcours clavier à 360 px, carrousel, achats, validation des quantités, rechargement et synchronisation du panier, avis, recherche et console CSP. Aucune mesure Lighthouse ni capture du Jour 3 n’a été produite dans cette session.
+## Limites
 
+Le projet reste en HTML et CSS. Les filtres et la pagination ne modifient pas encore les résultats. Les formulaires ne créent pas de compte, car il n’y a pas de serveur. Les prix sont des exemples et certaines pages du menu ne sont pas encore réalisées.
+
+## Captures
+
+| Page | 360 px | 768 px | 1 280 px |
+|---|---|---|---|
+| Accueil | ![Accueil à 360 px](docs/captures/index-360.png) | ![Accueil à 768 px](docs/captures/index-768.png) | ![Accueil à 1280 px](docs/captures/index-1280.png) |
+| Catégorie | ![Catégorie à 360 px](docs/captures/categorie-360.png) | ![Catégorie à 768 px](docs/captures/categorie-768.png) | ![Catégorie à 1280 px](docs/captures/categorie-1280.png) |
+| Produit | ![Produit à 360 px](docs/captures/produit-360.png) | ![Produit à 768 px](docs/captures/produit-768.png) | ![Produit à 1280 px](docs/captures/produit-1280.png) |
+
+![Accueil sombre](docs/captures/accueil-sombre.png)
