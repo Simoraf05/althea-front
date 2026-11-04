@@ -86,7 +86,7 @@
           </li>
         </ol>
       </nav>
-      <article class="fiche">
+      <article class="fiche" data-id="tensiometre">
         <!-- La galerie réutilise le défilement CSS du carrousel. -->
         <section class="fiche-images" aria-label="Photos du produit">
           <ul class="defile galerie liste-reset" tabindex="0" aria-label="Photos du tensiomètre, à faire défiler">
@@ -106,20 +106,19 @@
         </section>
         <div class="fiche-infos">
           <h1>Tensiomètre électronique de bras</h1>
-          <p>
-            Une lecture numérique claire et un brassard ajustable pour le quotidien du cabinet.
-          </p>
+          <p class="description-produit">Une lecture numérique claire et un brassard ajustable pour le quotidien du cabinet.</p>
           <p class="prix-fiche">
             <data value="49.90">49,90 €</data> <span>TTC</span>
           </p>
           <p class="stock stock-rupture">
             Disponibilité : en rupture de stock
           </p>
-          <!-- disabled bloque la quantité et l’achat car le produit est épuisé. -->
+          <!-- Le script vérifie aussi le stock et la quantité avant l’ajout. -->
           <form class="achat" action="panier.html" method="post">
             <label for="quantite">Quantité</label>
             <input id="quantite" name="quantite" type="number" min="1" max="10" value="1" disabled>
             <button class="btn" type="submit" disabled>En rupture de stock</button>
+            <p class="message-achat" aria-live="polite"></p>
           </form>
         </div>
         <div class="fiche-description">
@@ -317,6 +316,13 @@
             </article>
           </li>
         </ul>
+      </section>
+
+      <!-- Les avis sont chargés depuis le fichier JSON, puis écrits comme du texte. -->
+      <section class="avis" aria-labelledby="titre-avis">
+        <h2 id="titre-avis">Avis clients</h2>
+        <p id="etat-avis" aria-live="polite">Chargement des avis…</p>
+        <ul id="liste-avis" class="liste-reset"></ul>
       </section>
     </main>
     <!-- Pied visible sur ordinateur ; sur mobile, les liens sont dans le menu. -->

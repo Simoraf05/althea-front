@@ -988,3 +988,5 @@ legend {
 .pastilles a::before { background: transparent; border: 2px solid var(--couleur-primaire); }
 .pastilles a[aria-current]::before { background: var(--couleur-primaire); transform: scale(1.2); }
 @media print { .commandes-carrousel { display: none; } }
+
+.avis li { padding: 1rem; margin-top: 1rem; border: 1px solid var(--couleur-bordure); border-radius: var(--rayon); }

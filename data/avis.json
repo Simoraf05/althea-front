@@ -1,0 +1,7 @@
+[
+  { "produit": "tensiometre", "auteur": "Camille", "note": 4, "texte": "Écran lisible et brassard facile à installer." },
+  { "produit": "tensiometre", "auteur": "Alex", "note": 5, "texte": "Les mesures sont faciles à lire et l’appareil se range bien." },
+  { "produit": "tensiometre", "auteur": "<img src=x onerror=alert(1)>", "note": 3, "texte": "<b>Avis de test</b> : ce texte ne doit pas devenir du HTML." },
+  { "produit": "tensiometre", "auteur": "Note incorrecte", "note": 50, "texte": "Cet avis doit être ignoré." },
+  { "produit": "oxymetre", "auteur": "Sam", "note": 4, "texte": "Simple à utiliser." }
+]
