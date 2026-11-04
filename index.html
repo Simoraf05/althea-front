@@ -12,6 +12,7 @@
     <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/main.js"></script>
   </head>
   <body>
     <!-- Ce lien permet de passer le menu quand on navigue au clavier. -->
@@ -20,10 +21,15 @@
     <header class="entete">
       <a class="logo" href="index.html"><img src="img/logo.svg" alt="Althea Systems, accueil" width="240" height="60"></a>
       <a class="panier" href="panier.html">Panier <span class="visually-hidden compteur-texte">(0 article)</span></a>
-      <!-- details ouvre et ferme le menu sans JavaScript ; summary se commande au clavier. -->
-      <details class="navigation">
-        <summary class="menu-bouton"><span aria-hidden="true">☰</span> Menu</summary>
-        <nav id="menu-principal" class="menu" aria-label="Menu principal">
+      <!-- Le script change aria-expanded ; sans JavaScript, le menu reste ouvert. -->
+      <button class="menu-bouton" type="button" aria-expanded="true" aria-controls="menu-principal"><span aria-hidden="true">☰</span> Menu</button>
+      <form class="recherche" role="search" action="recherche.html" method="get">
+        <label class="visually-hidden" for="q">Rechercher un produit</label>
+        <input id="q" name="q" type="search" placeholder="Quel matériel cherchez-vous ?">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <nav id="menu-principal" class="menu" aria-label="Menu principal">
           <ul class="liste-reset">
             <li>
               <a href="index.html" aria-current="page">Accueil</a>
@@ -60,13 +66,6 @@
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a> · <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a>
           </p>
         </nav>
-      </details>
-      <form class="recherche" role="search" action="recherche.html" method="get">
-        <label class="visually-hidden" for="q">Rechercher un produit</label>
-        <input id="q" name="q" type="search" placeholder="Quel matériel cherchez-vous ?">
-        <button type="submit">Rechercher</button>
-      </form>
-
     </header>
     <!-- main contient le contenu propre à cette page. -->
     <main id="contenu" tabindex="-1">
@@ -75,7 +74,7 @@
       </div>
       <!-- Les trois images défilent avec le CSS, sans JavaScript. -->
       <section class="carrousel" aria-label="À la une">
-        <ul class="defile liste-reset" tabindex="0" aria-label="Offres à la une, à faire défiler">
+        <ul id="une-defile" class="defile liste-reset" tabindex="0" aria-label="Offres à la une, à faire défiler">
           <li id="une-1" class="slide">
             <!-- picture choisit une image adaptée à la taille de l’écran. -->
             <picture>
@@ -122,6 +121,10 @@
           <a href="#une-2"><span class="visually-hidden">Slide 2</span></a>
           <a href="#une-3"><span class="visually-hidden">Slide 3</span></a>
         </nav>
+        <div class="commandes-carrousel">
+          <button class="btn precedent" type="button" aria-controls="une-defile">Précédent</button>
+          <button class="btn suivant" type="button" aria-controls="une-defile">Suivant</button>
+        </div>
       </section>
       <p class="presentation">
         Althea Systems accompagne les professionnels de santé dans l’équipement de leur cabinet. Retrouvez le matériel adapté aux gestes de chaque jour.

@@ -174,11 +174,7 @@ main > section, .fiche {
   background: var(--couleur-alerte);
 }
 
-.navigation {
-  flex-shrink: 0;
-}
-
-/* Le navigateur gère lui-même l’ouverture et l’état du menu. */
+/* Le bouton reste utilisable au clavier. */
 .menu-bouton {
   display: flex;
   align-items: center;
@@ -191,10 +187,6 @@ main > section, .fiche {
   border-radius: var(--rayon);
   padding-inline: .65rem;
   cursor: pointer;
-}
-
-.menu-bouton::-webkit-details-marker {
-  display: none;
 }
 
 .recherche {
@@ -983,3 +975,16 @@ legend {
 .filtre input[type="checkbox"] { min-height: 20px; width: 20px; height: 20px; }
 .filtre p { flex-basis: 100%; }
 .produit .btn { margin-top: 1rem; }
+
+/* Le menu est repliable sur téléphone, toujours visible sur les grands écrans. */
+.entete:has(.menu-bouton[aria-expanded="false"]) .menu { display: none; }
+@media (min-width: 48rem) {
+  .menu-bouton { display: none; }
+  .menu { position: static; flex-basis: 100%; padding: .5rem 0 0; border-bottom: 0; }
+  .entete:has(.menu-bouton[aria-expanded="false"]) .menu { display: flex; flex-wrap: wrap; justify-content: space-between; }
+}
+.commandes-carrousel { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.commandes-carrousel .btn { width: auto; }
+.pastilles a::before { background: transparent; border: 2px solid var(--couleur-primaire); }
+.pastilles a[aria-current]::before { background: var(--couleur-primaire); transform: scale(1.2); }
+@media print { .commandes-carrousel { display: none; } }

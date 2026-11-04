@@ -21,10 +21,15 @@
     <header class="entete">
       <a class="logo" href="index.html"><img src="img/logo.svg" alt="Althea Systems, accueil" width="240" height="60"></a>
       <a class="panier" href="panier.html">Panier <span class="visually-hidden compteur-texte">(0 article)</span></a>
-      <!-- details ouvre et ferme le menu sans JavaScript ; summary se commande au clavier. -->
-      <details class="navigation">
-        <summary class="menu-bouton"><span aria-hidden="true">☰</span> Menu</summary>
-        <nav id="menu-principal" class="menu" aria-label="Menu principal">
+      <!-- Le script change aria-expanded ; sans JavaScript, le menu reste ouvert. -->
+      <button class="menu-bouton" type="button" aria-expanded="true" aria-controls="menu-principal"><span aria-hidden="true">☰</span> Menu</button>
+      <form class="recherche" role="search" action="recherche.html" method="get">
+        <label class="visually-hidden" for="q">Rechercher un produit</label>
+        <input id="q" name="q" type="search" placeholder="Quel matériel cherchez-vous ?">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <nav id="menu-principal" class="menu" aria-label="Menu principal">
           <ul class="liste-reset">
             <li>
               <a href="index.html">Accueil</a>
@@ -61,13 +66,6 @@
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a> · <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a>
           </p>
         </nav>
-      </details>
-      <form class="recherche" role="search" action="recherche.html" method="get">
-        <label class="visually-hidden" for="q">Rechercher un produit</label>
-        <input id="q" name="q" type="search" placeholder="Quel matériel cherchez-vous ?">
-        <button type="submit">Rechercher</button>
-      </form>
-
     </header>
     <!-- main contient le contenu propre à cette page. -->
     <main id="contenu" tabindex="-1">
