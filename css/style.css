@@ -990,3 +990,10 @@ legend {
 @media print { .commandes-carrousel { display: none; } }
 
 .avis li { padding: 1rem; margin-top: 1rem; border: 1px solid var(--couleur-bordure); border-radius: var(--rayon); }
+
+.ligne-panier { padding: 1rem; margin-bottom: 1rem; border: 1px solid var(--couleur-bordure); border-radius: var(--rayon); background: var(--couleur-surface); }
+.ligne-panier h2 { font-size: 1.2rem; margin-bottom: .5rem; }
+.ligne-panier label { display: block; margin-top: .5rem; }
+.ligne-panier input { width: 6rem; margin-block: .5rem; }
+.ligne-panier .btn { width: auto; margin-top: .5rem; }
+.total-panier { font-size: 1.4rem; margin-block: 1rem; }
