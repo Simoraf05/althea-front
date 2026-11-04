@@ -8,6 +8,7 @@ export function initialiserMenu() {
     const ouvert = bouton.getAttribute('aria-expanded') === 'true';
     bouton.setAttribute('aria-expanded', String(!ouvert));
   });
+  // Échap ferme le menu et remet le focus sur son bouton.
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && mobile.matches && bouton.getAttribute('aria-expanded') === 'true') {
       fermer();

@@ -3,6 +3,7 @@ import { trouverProduit } from './produits.js';
 import { formaterPrix } from './outils.js';
 import { mettreAJourIcone } from './icone-panier.js';
 
+// On refait les lignes et le total à partir du contenu du panier.
 export function afficherPanier() {
   const liste = document.querySelector('#lignes-panier');
   if (!liste) return;

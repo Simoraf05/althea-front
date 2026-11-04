@@ -2,8 +2,10 @@ import { produits } from './produits.js';
 import { afficherCatalogue, brancherAjouts } from './catalogue.js';
 import { trierPar, lireTri } from './tri.js';
 
+// Sans accents ni majuscules, les mots sont plus faciles à comparer.
 export const normaliser = (texte) => texte.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
+// Un prix incorrect dans l’adresse est remplacé par la valeur par défaut.
 export const lireNombre = (texte, parDefaut) => {
   const nombre = Number(texte);
   return texte !== null && texte.trim() !== '' && Number.isFinite(nombre) && nombre >= 0 ? nombre : parDefaut;
@@ -34,6 +36,7 @@ export function initialiserRecherche() {
   document.querySelector('#titre-resultats').textContent = `Résultats pour « ${mot} » : ${selection.length} produits`;
   document.querySelector('#aucun-resultat').hidden = selection.length !== 0;
   document.querySelector('#q').value = mot;
+  // On remet les critères dans les champs pour pouvoir corriger la recherche.
   const form = document.querySelector('.facettes');
   form.querySelector('#f-nom').value = mot;
   form.querySelector('#f-description').value = params.get('description') ?? '';

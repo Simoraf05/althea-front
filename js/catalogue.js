@@ -17,6 +17,7 @@ export function creerCarte({ id, nom, prix, stock, image }) {
   const titre = document.createElement('h3');
   const lien = document.createElement('a');
   lien.href = `produit.html?id=${encodeURIComponent(id)}`;
+  // Le nom reste du texte, même s’il contient des balises HTML.
   lien.textContent = nom;
   titre.append(lien);
   const tarif = document.createElement('p');
@@ -61,6 +62,7 @@ export function initialiserCatalogue() {
   const url = new URL(location.href);
   choix.value = lireTri(url.searchParams.get('tri'));
   caseDispo.checked = url.searchParams.get('disponible') === 'oui';
+  // On filtre, on trie, puis on refait les cartes avec les produits retenus.
   const rafraichir = () => {
     const selection = caseDispo.checked ? produits.filter((produit) => produit.stock > 0) : produits;
     afficherCatalogue(liste, trierPar(selection, choix.value));

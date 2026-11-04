@@ -4,10 +4,12 @@ export async function chargerAvis() {
   const etat = document.querySelector('#etat-avis');
   const id = document.querySelector('.fiche').dataset.id;
   try {
+    // On attend le fichier des avis sans bloquer le reste de la page.
     const reponse = await fetch('data/avis.json');
     if (!reponse.ok) throw new Error(`HTTP ${reponse.status}`);
     const donnees = await reponse.json();
     if (!Array.isArray(donnees)) throw new Error('Format des avis incorrect');
+    // On garde les avis du produit avec une note entière entre 1 et 5.
     const avis = donnees.filter((avis) => avis && avis.produit === id
       && Number.isInteger(avis.note) && avis.note >= 1 && avis.note <= 5
       && typeof avis.auteur === 'string' && typeof avis.texte === 'string');

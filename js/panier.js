@@ -23,6 +23,7 @@ export function charger() {
   }
 }
 
+// On retrouve les articles sauvegardés quand on ouvre une nouvelle page.
 export const panier = charger();
 
 const sauvegarder = () => {
@@ -45,6 +46,7 @@ export const stockageDisponible = () => {
   }
 };
 
+// Un nouvel ajout augmente la quantité si le produit est déjà présent.
 export function ajouter(id) {
   const produit = trouverProduit(id);
   if (!produit || produit.stock === 0) return false;

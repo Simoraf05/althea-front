@@ -11,6 +11,7 @@ export function lancerTests() {
   const avant = JSON.stringify(liste);
   const tries = trierCatalogue(liste);
   const prix = trierPar(liste, 'prix-croissant');
+  // Chaque essai vérifie une règle et donne vrai ou faux.
   const essais = [
     ['prix avec décimales', formaterPrix(89.9) === '89,90 €'],
     ['prix entier', formaterPrix(24) === '24,00 €'],

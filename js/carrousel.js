@@ -5,6 +5,7 @@ export function initialiserCarrousel() {
   const suivant = document.querySelector('.suivant');
   const pastilles = [...document.querySelectorAll('.pastilles a')];
   const defiler = (sens) => {
+    // On respecte le réglage qui réduit les animations.
     const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
     zone.scrollBy({ left: sens * zone.clientWidth, behavior: reduit ? 'auto' : 'smooth' });
   };

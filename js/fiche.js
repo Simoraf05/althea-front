@@ -60,6 +60,7 @@ export function initialiserFiche() {
       message.textContent = 'Ce produit est en rupture de stock.';
       return;
     }
+    // On revérifie la quantité, car les limites du HTML peuvent être retirées.
     const quantite = Number(champ.value);
     if (!Number.isInteger(quantite) || quantite < 1 || quantite > 10) {
       message.textContent = 'Saisissez un entier entre 1 et 10.';
@@ -72,6 +73,7 @@ export function initialiserFiche() {
       champ.focus();
       return;
     }
+    // La même fonction ajoute chaque exemplaire au panier.
     for (let i = 0; i < quantite; i++) ajouter(produit.id);
     message.textContent = `${quantite} article${quantite > 1 ? 's' : ''} ajouté${quantite > 1 ? 's' : ''} au panier.`;
     mettreAJourIcone();

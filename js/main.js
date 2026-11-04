@@ -9,6 +9,7 @@ import { initialiserCarrousel } from './carrousel.js';
 import { initialiserCatalogue, initialiserSelections } from './catalogue.js';
 import { mettreAJourIcone } from './icone-panier.js';
 
+// Chaque fonction démarre seulement si elle trouve ses éléments dans la page.
 initialiserCatalogue();
 mettreAJourIcone();
 
@@ -31,4 +32,5 @@ window.addEventListener('storage', (event) => {
   afficherPanier();
 });
 
+// Les tests se lancent seulement avec ?tests dans l’adresse.
 if (new URLSearchParams(location.search).has('tests')) lancerTests();
