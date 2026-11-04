@@ -41,10 +41,12 @@ Ces scores automatiques ne remplacent pas un parcours avec un lecteur d’écran
 
 - Renouveler les validations officielles HTML et CSS W3C : le contrôle local ne les remplace pas.
 - Vérifier le zoom natif à 200 %, l’impression et le parcours avec Narrateur.
-- Terminer le rendu Git en fin de journée : les derniers commits, les branches et pull requests par page prévues par le TP, puis le tag `jour-3`.
+- Faire relire les modifications par le groupe et terminer les pull requests et fusions prévues par le TP.
 
-Le jour 3 est préparé en local. Sa publication est laissée pour la fin de journée, comme demandé.
+## État Git vérifié
 
-Les captures sont dans `captures/` et dans le README. Les choix de mise en page sont dans [responsive.md](responsive.md) et les protections dans [securite.md](securite.md).
+Le 4 novembre 2026, la branche distante `Ryan_Mambou` contient la version du jour 3, identifiée par le tag `jour-3`. Les tags `jour-1` et `jour-2` sont également présents sur GitHub. La publication du jour 3 a donc bien été faite ; les pull requests et la fusion vers la branche commune restent à coordonner avec le groupe.
 
-Dernier contr?le avant publication : les sept pages se chargent sans erreur JavaScript ni CSP, les dix tests passent et le panier conserve le total de 69,00 ? apr?s rechargement. Les photos de l?oxym?tre et du st?thoscope sont stock?es dans `img/`, avec leurs cr?dits dans le README.
+Le dernier contrôle vérifie le chargement des sept pages sans erreur JavaScript ni CSP, les dix tests et la conservation du total de 69,00 € après rechargement du panier.
+
+Les captures sont dans `captures/` et dans le README. Les choix de mise en page sont dans [responsive.md](responsive.md), les protections dans [securite.md](securite.md) et les scénarios JavaScript dans [tests-js.md](tests-js.md).

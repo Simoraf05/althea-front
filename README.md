@@ -12,6 +12,27 @@ Lancer `index.html` avec Live Server dans VS Code. Un serveur local est nécessa
 - Jour 2 : pages catégorie, recherche, connexion et inscription, responsive, mode sombre et impression.
 - Jour 3 : catalogue dynamique, recherche, menu, carrousel, avis et panier sauvegardé.
 
+## Arborescence
+
+```text
+althea-front/
+  index.html
+  categorie.html
+  produit.html
+  recherche.html
+  panier.html
+  connexion.html
+  inscription.html
+  css/variables.css
+  css/style.css
+  js/                  Modules décrits ci-dessous
+  data/avis.json       Avis des produits
+  img/                 Images du site
+  docs/                Analyse, tests, sécurité et captures
+```
+
+Flexbox sert à aligner les éléments du menu et les cartes. Grid organise les grilles de produits et la fiche sur ordinateur. Les styles partent du mobile, puis s’adaptent avec des media queries.
+
 ## JavaScript
 
 | Fichier dans `js/` | Rôle |
