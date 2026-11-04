@@ -23,7 +23,7 @@ Le logo garde un fond blanc pour rester visible. Les fonds des photos de produit
 
 ## Carrousel et mouvements
 
-Le carrousel utilise `overflow-x` et `scroll-snap-type` pour faire défiler les images et les aligner. Les pastilles pointent vers chaque image. La galerie utilise le même principe. Les boutons précédent/suivant et la mise à jour de la pastille active restent à développer.
+Le carrousel utilise `overflow-x` et `scroll-snap-type` pour faire défiler les images et les aligner. Les pastilles pointent vers chaque image. La galerie utilise le même principe. Au jour 3, les boutons précédent/suivant et la pastille active sont gérés par JavaScript.
 
 Le défilement fluide et le déplacement des cartes au survol sont activés seulement si l’utilisateur n’a pas demandé de réduire les animations, avec `prefers-reduced-motion: no-preference`.
 
@@ -41,6 +41,10 @@ Une règle `@media print` simplifie la fiche produit pour l’impression. L’en
 
 Les autres résultats et les vérifications manuelles restantes sont dans [audit.md](audit.md).
 
-## Menu burger sans JavaScript
+## Menu et panier — jour 3
 
-Le menu commun utilise `details` et `summary`. Il est fermé au chargement et s’ouvre au clic, avec Entrée ou Espace. Les liens sont ensuite accessibles avec Tab. Le navigateur gère l’état ouvert ou fermé, sans attribut `aria-expanded` figé. Le menu se place sous l’en-tête pour ne pas élargir la page.
+Sur téléphone, le bouton ouvre le menu et annonce son état avec `aria-expanded`. Échap le ferme et remet le focus sur le bouton. À partir de 48rem, le bouton est caché et le menu reste visible.
+
+Les lignes du panier restent empilées pour être lisibles à 320 px. Le mode sombre conserve les couleurs définies au jour 2. Les boutons du carrousel respectent la préférence de réduction des animations.
+
+Les captures ont été renouvelées avec les fonctions du jour 3. Les tests interactifs sont dans [tests-js.md](tests-js.md).

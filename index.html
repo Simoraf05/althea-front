@@ -30,42 +30,42 @@
       </form>
 
       <nav id="menu-principal" class="menu" aria-label="Menu principal">
-          <ul class="liste-reset">
-            <li>
-              <a href="index.html" aria-current="page">Accueil</a>
-            </li>
-            <li>
-              <a href="categorie.html">Diagnostic</a>
-            </li>
-            <li>
-              <a href="connexion.html">Se connecter</a>
-            </li>
-            <li>
-              <a href="inscription.html">S’inscrire</a>
-            </li>
-            <li>
-              <a href="cgu.html">CGU</a>
-            </li>
-            <li>
-              <a href="mentions-legales.html">Mentions légales</a>
-            </li>
-            <li>
-              <a href="contact.html">Contact</a>
-            </li>
-            <li>
-              <a href="a-propos.html">À propos d’Althea Systems</a>
-            </li>
-          </ul>
-          <p class="langues">
-            Langue :
-            <a href="index.html" lang="fr" hreflang="fr" aria-current="true">Français</a>
-            <a href="en/index.html" lang="en" hreflang="en">English</a>
-            <a href="ar/index.html" lang="ar" hreflang="ar" dir="rtl">العربية</a>
-          </p>
-          <p class="liens-mobile">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a> · <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a>
-          </p>
-        </nav>
+        <ul class="liste-reset">
+          <li>
+            <a href="index.html" aria-current="page">Accueil</a>
+          </li>
+          <li>
+            <a href="categorie.html">Diagnostic</a>
+          </li>
+          <li>
+            <a href="connexion.html">Se connecter</a>
+          </li>
+          <li>
+            <a href="inscription.html">S’inscrire</a>
+          </li>
+          <li>
+            <a href="cgu.html">CGU</a>
+          </li>
+          <li>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="a-propos.html">À propos d’Althea Systems</a>
+          </li>
+        </ul>
+        <p class="langues">
+          Langue :
+          <a href="index.html" lang="fr" hreflang="fr" aria-current="true">Français</a>
+          <a href="en/index.html" lang="en" hreflang="en">English</a>
+          <a href="ar/index.html" lang="ar" hreflang="ar" dir="rtl">العربية</a>
+        </p>
+        <p class="liens-mobile">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (nouvel onglet)</span></a> · <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a>
+        </p>
+      </nav>
     </header>
     <!-- main contient le contenu propre à cette page. -->
     <main id="contenu" tabindex="-1">
@@ -150,55 +150,9 @@
       <!-- Les cartes gardent la même structure : image, nom, prix et stock. -->
       <section class="top-produits" aria-labelledby="titre-top">
         <h2 id="titre-top">Les Top Produits du moment</h2>
-        <ul class="liste-top liste-reset">
-          <li>
-            <article class="produit">
-              <img src="img/tensiometre-face.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Tensiomètre électronique de bras</a></h3>
-              <p class="prix">
-                <data value="49.90">49,90 €</data> <span>TTC</span>
-              </p>
-              <p class="stock stock-rupture">
-                En rupture de stock
-              </p>
-            </article>
-          </li>
-          <li>
-            <article class="produit">
-              <img src="img/categorie-diagnostic.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Kit de diagnostic médical</a></h3>
-              <p class="prix">
-                <data value="129.00">129,00 €</data> <span>TTC</span>
-              </p>
-              <p class="stock">
-                En stock
-              </p>
-            </article>
-          </li>
-          <li>
-            <article class="produit">
-              <img src="img/categorie-soins.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Kit de soins</a></h3>
-              <p class="prix">
-                <data value="24.90">24,90 €</data> <span>TTC</span>
-              </p>
-              <p class="stock">
-                En stock
-              </p>
-            </article>
-          </li>
-          <li>
-            <article class="produit">
-              <img src="img/categorie-consommables.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Lot de consommables médicaux</a></h3>
-              <p class="prix">
-                <data value="34.90">34,90 €</data> <span>TTC</span>
-              </p>
-              <p class="stock">
-                En stock
-              </p>
-            </article>
-          </li>
+        <p id="message-selection-accueil" aria-live="polite"></p>
+        <ul id="selection-accueil" class="liste-top liste-reset">
+          <!-- Ces cartes reprennent les données du catalogue. -->
         </ul>
       </section>
     </main>

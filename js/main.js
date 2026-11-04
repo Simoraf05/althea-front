@@ -1,3 +1,4 @@
+import { lancerTests } from './tests.js';
 import { initialiserPanier, afficherPanier } from './vue-panier.js';
 import { CLE, recharger } from './panier.js';
 import { initialiserRecherche } from './recherche.js';
@@ -5,7 +6,7 @@ import { initialiserFiche } from './fiche.js';
 import { chargerAvis } from './avis.js';
 import { initialiserMenu } from './menu.js';
 import { initialiserCarrousel } from './carrousel.js';
-import { initialiserCatalogue } from './catalogue.js';
+import { initialiserCatalogue, initialiserSelections } from './catalogue.js';
 import { mettreAJourIcone } from './icone-panier.js';
 
 initialiserCatalogue();
@@ -15,6 +16,7 @@ initialiserMenu();
 initialiserCarrousel();
 
 initialiserFiche();
+initialiserSelections();
 chargerAvis();
 
 initialiserRecherche();
@@ -28,3 +30,5 @@ window.addEventListener('storage', (event) => {
   mettreAJourIcone();
   afficherPanier();
 });
+
+if (new URLSearchParams(location.search).has('tests')) lancerTests();

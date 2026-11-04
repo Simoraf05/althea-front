@@ -444,7 +444,7 @@ input, select {
 
 .produit img {
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: calc(var(--rayon) / 2);
   background: #fff;
 }
@@ -968,32 +968,129 @@ legend {
 }
 
 /* Jour 3 : le point dépend du vrai contenu du panier. */
-.panier.a-des-articles::after { display: block; }
-[hidden] { display: none !important; }
-.filtre { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-.filtre label { min-height: 44px; display: inline-flex; align-items: center; }
-.filtre input[type="checkbox"] { min-height: 20px; width: 20px; height: 20px; }
-.filtre p { flex-basis: 100%; }
-.produit .btn { margin-top: 1rem; }
+.panier.a-des-articles::after {
+  display: block;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.filtre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filtre label {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.filtre input[type="checkbox"] {
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.filtre p {
+  flex-basis: 100%;
+}
+
+.produit .btn {
+  margin-top: 1rem;
+}
 
 /* Le menu est repliable sur téléphone, toujours visible sur les grands écrans. */
-.entete:has(.menu-bouton[aria-expanded="false"]) .menu { display: none; }
-@media (min-width: 48rem) {
-  .menu-bouton { display: none; }
-  .menu { position: static; flex-basis: 100%; padding: .5rem 0 0; border-bottom: 0; }
-  .entete:has(.menu-bouton[aria-expanded="false"]) .menu { display: flex; flex-wrap: wrap; justify-content: space-between; }
+.entete:has(.menu-bouton[aria-expanded="false"]) .menu {
+  display: none;
 }
-.commandes-carrousel { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
-.commandes-carrousel .btn { width: auto; }
-.pastilles a::before { background: transparent; border: 2px solid var(--couleur-primaire); }
-.pastilles a[aria-current]::before { background: var(--couleur-primaire); transform: scale(1.2); }
-@media print { .commandes-carrousel { display: none; } }
 
-.avis li { padding: 1rem; margin-top: 1rem; border: 1px solid var(--couleur-bordure); border-radius: var(--rayon); }
+@media (min-width: 48rem) {
+  .menu-bouton {
+    display: none;
+  }
 
-.ligne-panier { padding: 1rem; margin-bottom: 1rem; border: 1px solid var(--couleur-bordure); border-radius: var(--rayon); background: var(--couleur-surface); }
-.ligne-panier h2 { font-size: 1.2rem; margin-bottom: .5rem; }
-.ligne-panier label { display: block; margin-top: .5rem; }
-.ligne-panier input { width: 6rem; margin-block: .5rem; }
-.ligne-panier .btn { width: auto; margin-top: .5rem; }
-.total-panier { font-size: 1.4rem; margin-block: 1rem; }
+  .menu {
+    position: static;
+    flex-basis: 100%;
+    padding: .5rem 0 0;
+    border-bottom: 0;
+  }
+
+  .entete:has(.menu-bouton[aria-expanded="false"]) .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+}
+.commandes-carrousel {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.commandes-carrousel .btn {
+  width: auto;
+}
+
+.pastilles a::before {
+  background: transparent;
+  border: 2px solid var(--couleur-primaire);
+}
+
+.pastilles a[aria-current]::before {
+  background: var(--couleur-primaire);
+  transform: scale(1.2);
+}
+
+@media print {
+  .commandes-carrousel, .avis {
+    display: none;
+  }
+}
+
+.avis li {
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon);
+}
+
+.ligne-panier {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon);
+  background: var(--couleur-surface);
+}
+
+.ligne-panier h2 {
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.ligne-panier label {
+  display: block;
+  margin-top: .5rem;
+}
+
+.ligne-panier input {
+  width: 6rem;
+  margin-block: .5rem;
+}
+
+.ligne-panier .btn {
+  width: auto;
+  margin-top: .5rem;
+}
+
+.total-panier {
+  font-size: 1.4rem;
+  margin-block: 1rem;
+}

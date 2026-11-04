@@ -76,3 +76,19 @@ export function initialiserCatalogue() {
   document.querySelector('.pagination').hidden = true;
   rafraichir();
 }
+
+export function initialiserSelections() {
+  const accueil = document.querySelector('#selection-accueil');
+  if (accueil) {
+    const selection = trierPar(produits, 'recommande').filter((produit) => produit.stock > 0).slice(0, 4);
+    afficherCatalogue(accueil, selection);
+    brancherAjouts(accueil, document.querySelector('#message-selection-accueil'));
+  }
+  const similaires = document.querySelector('#selection-similaires');
+  if (similaires) {
+    const id = document.querySelector('.fiche').dataset.id;
+    const selection = trierPar(produits, 'recommande').filter((produit) => produit.id !== id).slice(0, 6);
+    afficherCatalogue(similaires, selection);
+    brancherAjouts(similaires, document.querySelector('#message-selection-similaires'));
+  }
+}

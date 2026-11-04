@@ -6,6 +6,9 @@ import { mettreAJourIcone } from './icone-panier.js';
 export function afficherPanier() {
   const liste = document.querySelector('#lignes-panier');
   if (!liste) return;
+  const actif = document.activeElement;
+  const focusDansListe = liste.contains(actif);
+  const idActif = actif.id;
   liste.replaceChildren();
   panier.forEach(({ id, quantite }) => {
     const produit = trouverProduit(id);
@@ -39,6 +42,12 @@ export function afficherPanier() {
   document.querySelector('#panier-vide').hidden = panier.length !== 0;
   document.querySelector('#total').textContent = formaterPrix(calculerTotal());
   mettreAJourIcone();
+  // Une mise à jour venant d’un autre onglet ne doit pas faire perdre le focus.
+  if (focusDansListe) {
+    const nouveauChamp = document.getElementById(idActif);
+    if (nouveauChamp) nouveauChamp.focus();
+    else document.querySelector('#titre-panier').focus();
+  }
 }
 
 export function initialiserPanier() {

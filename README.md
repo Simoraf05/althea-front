@@ -1,38 +1,53 @@
-# Althea Systems — TP 1 et TP 2
+# Althea Systems — TP 1, 2 et 3
 
-Projet de bachelor : créer les pages d’un site de matériel médical en HTML et CSS.
+Projet de bachelor : un site de matériel médical en HTML, CSS et JavaScript.
 
-## Ouvrir le site
+## Ouvrir le projet
 
-Ouvrir le dossier dans VS Code, puis lancer `index.html` avec Live Server. Il n’y a pas de dépendance à installer.
+Lancer `index.html` avec Live Server dans VS Code. Un serveur local est nécessaire pour les modules JavaScript et le chargement des avis.
 
-## Contenu du projet
+## Travail réalisé
 
-Le TP 1 concerne l’accueil et la fiche produit : navigation, images, prix, stock et caractéristiques.
+- Jour 1 : accueil et fiche produit en HTML et CSS.
+- Jour 2 : pages catégorie, recherche, connexion et inscription, responsive, mode sombre et impression.
+- Jour 3 : catalogue dynamique, recherche, menu, carrousel, avis et panier sauvegardé.
 
-Le TP 2 ajoute les pages catégorie, recherche, connexion et inscription. La mise en page s’adapte au téléphone, à la tablette et à l’ordinateur avec Flexbox, Grid et des media queries.
+## JavaScript
 
-Le menu utilise `details` et `summary` pour fonctionner sans JavaScript. Le mode sombre suit les préférences de l’appareil. La fiche produit contient un tableau des tailles et une version pour l’impression.
+| Fichier dans `js/` | Rôle |
+|---|---|
+| produits.js | Données du catalogue et recherche par identifiant |
+| tri.js | Tris et contrôle du choix de tri |
+| outils.js | Prix au format français |
+| catalogue.js | Création des cartes et ajouts depuis les listes |
+| panier.js | Articles, quantités, total et stockage |
+| icone-panier.js | Compteur et point du panier |
+| menu.js | Ouverture, fermeture et touche Échap |
+| carrousel.js | Boutons et pastille active |
+| fiche.js | Produit affiché et vérification de la quantité |
+| avis.js | Chargement et affichage des avis |
+| recherche.js | Recherche sans accent et filtres |
+| vue-panier.js | Lignes du panier, quantités et suppression |
+| tests.js | Dix tests lancés avec `categorie.html?tests` |
+| main.js | Initialisation des fonctions selon la page |
 
-## Organisation
+Le tri recommandé met les prioritaires en premier, les autres ensuite et les épuisés à la fin. Les tris par prix gardent aussi les épuisés à la fin.
 
-- Les pages sont à la racine du projet.
-- `css/variables.css` contient les couleurs et les valeurs communes.
-- `css/style.css` contient la mise en page.
-- `img/` contient les images.
-- `docs/` contient [l’analyse](docs/analyse.md), [les tests](docs/audit.md), [le responsive](docs/responsive.md) et [la sécurité](docs/securite.md).
+Les données sont affichées avec `textContent`. Le panier garde seulement les identifiants et les quantités dans le navigateur, puis les vérifie à la relecture. Les comptes ne sont pas reliés à un serveur.
 
-## Responsive et vérifications
+## Documents et tests
 
-Sur téléphone, les blocs sont empilés. Sur les écrans plus larges, les produits passent en grille et la fiche produit en deux colonnes. La galerie et le tableau défilent dans leur bloc pour ne pas faire dépasser la page.
+- [Analyse](docs/analyse.md) : organisation des pages.
+- [Responsive](docs/responsive.md) : mise en page et captures.
+- [Sécurité](docs/securite.md) : protections et tests XSS.
+- [Audit](docs/audit.md) : contrôles HTML, CSS et accessibilité.
+- [Tests JavaScript](docs/tests-js.md) : dix tests des fonctions et parcours dans le navigateur.
 
-Les tests à 320, 360, 768 et 1 280 px ne montrent pas de débordement. Le contrôle Lighthouse du 4 novembre 2026 donne 100/100 en accessibilité sur les six pages. Les validations officielles W3C et les vérifications manuelles restantes sont indiquées dans l’audit.
-
-## Limites
-
-Le projet reste en HTML et CSS. Les filtres et la pagination ne modifient pas encore les résultats. Les formulaires ne créent pas de compte, car il n’y a pas de serveur. Les prix sont des exemples et certaines pages du menu ne sont pas encore réalisées.
+Les dix tests des fonctions et les tests interactifs passent. Les sept pages ont été contrôlées à 320, 360, 768 et 1 280 px, en clair et en sombre. Lighthouse Accessibilité donne 100/100 sur les sept pages au contrôle du 4 novembre 2026. Les validations officielles W3C et les vérifications manuelles restantes sont précisées dans les documents.
 
 ## Captures
+
+Les cartes passent en grille sur grand écran. La galerie et le tableau défilent dans leur propre zone pour éviter les débordements sur téléphone.
 
 | Page | 360 px | 768 px | 1 280 px |
 |---|---|---|---|
@@ -41,3 +56,8 @@ Le projet reste en HTML et CSS. Les filtres et la pagination ne modifient pas en
 | Produit | ![Produit à 360 px](docs/captures/produit-360.png) | ![Produit à 768 px](docs/captures/produit-768.png) | ![Produit à 1280 px](docs/captures/produit-1280.png) |
 
 ![Accueil sombre](docs/captures/accueil-sombre.png)
+
+## Photos ajoutées
+
+- `img/oxymetre-photo.jpg` : [photo de Thinkpaul](https://commons.wikimedia.org/wiki/File:FingertipPulseOximeter300C2.jpg), version de Wdwd, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Version réduite fournie par Wikimedia, sans autre retouche.
+- `img/stethoscope-photo.png` : [photo de Huji, version de Sonarpulse](https://commons.wikimedia.org/wiki/File:Stethoscope-2.png), domaine public, fichier repris sans retouche.
