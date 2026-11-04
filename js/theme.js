@@ -39,6 +39,10 @@ try {
 appliquerTheme(themeInitial);
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.logo img').forEach((logo) => {
+    logo.src = racine.dataset.theme === 'dark' ? 'img/logo-dark.svg' : 'img/logo.svg';
+  });
+
   document.querySelectorAll('.theme-toggle').forEach((bouton) => {
     bouton.addEventListener('click', () => {
       appliquerTheme(racine.dataset.theme === 'dark' ? 'light' : 'dark', true);
