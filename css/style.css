@@ -777,12 +777,23 @@ main > h1 + section {
 
 .fiche {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
   gap: 1.25rem;
   padding: clamp(1rem, 3vw, 2rem);
   background: var(--couleur-surface);
   border: 1px solid var(--couleur-bordure);
   border-radius: 1.25rem;
   box-shadow: var(--ombre-petite);
+}
+
+.fiche > *,
+.fiche-images,
+.fiche-infos,
+.fiche-description,
+.galerie {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .fiche > h1 {
@@ -796,8 +807,12 @@ main > h1 + section {
 
 .galerie .defile {
   display: grid;
-  grid-auto-columns: 85%;
+  grid-template-columns: none;
+  grid-auto-columns: minmax(0, 85%);
   grid-auto-flow: column;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   gap: .75rem;
   padding: .15rem .15rem .8rem;
   overflow-x: auto;
