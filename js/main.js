@@ -1,3 +1,4 @@
+import { initialiserRecherche } from './recherche.js';
 import { initialiserFiche } from './fiche.js';
 import { chargerAvis } from './avis.js';
 import { initialiserMenu } from './menu.js';
@@ -13,3 +14,5 @@ initialiserCarrousel();
 
 initialiserFiche();
 chargerAvis();
+
+initialiserRecherche();

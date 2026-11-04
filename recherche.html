@@ -76,7 +76,7 @@
         </p>
       </div>
       <!-- Les filtres et les résultats sont côte à côte sur ordinateur. -->
-      <!-- Le formulaire prépare les critères ; le filtrage réel reste à programmer. -->
+      <!-- Les critères sont lus dans l’adresse après l’envoi du formulaire. -->
       <div class="recherche-avancee">
         <form class="facettes" action="recherche.html" method="get">
           <h2>Vos critères</h2>
@@ -114,88 +114,19 @@
             </p>
           </fieldset>
           <p class="case">
-            <input id="disponibles" name="disponibles" type="checkbox" value="oui"><label for="disponibles">Disponibles seulement</label>
+            <input id="disponibles" name="disponible" type="checkbox" value="oui"><label for="disponibles">Disponibles seulement</label>
           </p>
           <p>
-            <label for="tri">Trier par</label><select id="tri" name="tri"><option value="prix-croissant">Prix croissant</option><option value="prix-decroissant">Prix décroissant</option><option value="nouveaute">Nouveauté</option><option value="disponibilite">Disponibilité</option></select>
+            <label for="tri">Trier par</label><select id="tri" name="tri"><option value="recommande">Recommandé</option><option value="prix-croissant">Prix croissant</option><option value="prix-decroissant">Prix décroissant</option><option value="nouveaute">Nouveauté</option><option value="disponibilite">Disponibilité</option></select>
           </p>
           <button class="btn" type="submit">Appliquer les filtres</button>
         </form>
         <section class="resultats" aria-labelledby="titre-resultats">
-          <h2 id="titre-resultats">Résultats : 6 produits</h2>
-          <ul class="produits liste-reset">
-            <li>
-              <article class="produit">
-                <img src="img/categorie-diagnostic.png" alt="" width="1448" height="1086" loading="lazy">
-                <h3><a href="produit.html">Kit de diagnostic médical</a></h3>
-                <p class="prix">
-                  <data value="129.00">129,00 €</data> <span>TTC</span>
-                </p>
-                <p class="stock">
-                  En stock
-                </p>
-              </article>
-            </li>
-            <li>
-              <article class="produit">
-                <img src="img/categorie-soins.png" alt="" width="1448" height="1086" loading="lazy">
-                <h3><a href="produit.html">Kit de soins</a></h3>
-                <p class="prix">
-                  <data value="24.90">24,90 €</data> <span>TTC</span>
-                </p>
-                <p class="stock">
-                  En stock
-                </p>
-              </article>
-            </li>
-            <li>
-              <article class="produit">
-                <img src="img/categorie-consommables.png" alt="" width="1448" height="1086" loading="lazy">
-                <h3><a href="produit.html">Lot de consommables médicaux</a></h3>
-                <p class="prix">
-                  <data value="34.90">34,90 €</data> <span>TTC</span>
-                </p>
-                <p class="stock">
-                  En stock
-                </p>
-              </article>
-            </li>
-            <li>
-              <article class="produit">
-                <img src="img/categorie-mobilier.png" alt="" width="1448" height="1086" loading="lazy">
-                <h3><a href="produit.html">Table d’examen</a></h3>
-                <p class="prix">
-                  <data value="289.00">289,00 €</data> <span>TTC</span>
-                </p>
-                <p class="stock">
-                  En stock
-                </p>
-              </article>
-            </li>
-            <li>
-              <article class="produit">
-                <img src="img/banniere-echographe.png" alt="" width="1448" height="1086" loading="lazy">
-                <h3><a href="produit.html">Échographe portable</a></h3>
-                <p class="prix">
-                  <data value="2490.00">2 490,00 €</data> <span>TTC</span>
-                </p>
-                <p class="stock">
-                  En stock
-                </p>
-              </article>
-            </li>
-            <li>
-              <article class="produit">
-                <img src="img/tensiometre-face.png" alt="" width="1448" height="1086" loading="lazy">
-                <h3><a href="produit.html">Tensiomètre électronique de bras</a></h3>
-                <p class="prix">
-                  <data value="49.90">49,90 €</data> <span>TTC</span>
-                </p>
-                <p class="stock stock-rupture">
-                  En rupture de stock
-                </p>
-              </article>
-            </li>
+          <h2 id="titre-resultats" aria-live="polite">Résultats</h2>
+          <p id="aucun-resultat" hidden>Aucun produit ne correspond à votre recherche.</p>
+          <p id="message-recherche" aria-live="polite"></p>
+          <ul id="resultats-produits" class="produits liste-reset">
+            <!-- Les résultats sont créés par le JavaScript. -->
           </ul>
           <nav class="pagination" aria-label="Pagination">
             <ul class="liste-reset">
