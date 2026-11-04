@@ -12,6 +12,7 @@
     <link rel="icon" href="img/logo.svg">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/main.js"></script>
   </head>
   <body>
     <!-- Ce lien permet de passer le menu quand on navigue au clavier. -->
@@ -19,7 +20,7 @@
     <!-- En-tête commun : logo, recherche et liens du menu. -->
     <header class="entete">
       <a class="logo" href="index.html"><img src="img/logo.svg" alt="Althea Systems, accueil" width="240" height="60"></a>
-      <a class="panier" href="panier.html">Panier <span class="visually-hidden">(2 articles)</span></a>
+      <a class="panier" href="panier.html">Panier <span class="visually-hidden compteur-texte">(0 article)</span></a>
       <!-- details ouvre et ferme le menu sans JavaScript ; summary se commande au clavier. -->
       <details class="navigation">
         <summary class="menu-bouton"><span aria-hidden="true">☰</span> Menu</summary>
@@ -73,87 +74,27 @@
       <!-- Le bandeau présente la catégorie avec son image et son titre. -->
       <section class="bandeau" aria-labelledby="titre-categorie">
         <img src="img/categorie-diagnostic.png" alt="" width="1448" height="1086" fetchpriority="high">
-        <h1 id="titre-categorie">Diagnostic</h1>
+        <h1 id="titre-categorie">Catalogue</h1>
       </section>
       <p class="presentation">
-        Les outils du diagnostic et une sélection d’équipements pour compléter votre cabinet.
+        Diagnostic, soins, mobilier et consommables pour le cabinet.
       </p>
       <section aria-labelledby="titre-produits">
-        <h2 id="titre-produits">Les produits de la catégorie</h2>
-        <!-- Chaque article représente une carte produit, mise en grille avec le CSS. -->
-        <ul class="produits liste-reset">
-          <li>
-            <article class="produit">
-              <img src="img/categorie-diagnostic.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Kit de diagnostic médical</a></h3>
-              <p class="prix">
-                <data value="129.00">129,00 €</data> <span>TTC</span>
-              </p>
-              <p class="stock">
-                En stock
-              </p>
-            </article>
-          </li>
-          <li>
-            <article class="produit">
-              <img src="img/categorie-soins.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Kit de soins</a></h3>
-              <p class="prix">
-                <data value="24.90">24,90 €</data> <span>TTC</span>
-              </p>
-              <p class="stock">
-                En stock
-              </p>
-            </article>
-          </li>
-          <li>
-            <article class="produit">
-              <img src="img/categorie-consommables.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Lot de consommables médicaux</a></h3>
-              <p class="prix">
-                <data value="34.90">34,90 €</data> <span>TTC</span>
-              </p>
-              <p class="stock">
-                En stock
-              </p>
-            </article>
-          </li>
-          <li>
-            <article class="produit">
-              <img src="img/categorie-mobilier.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Table d’examen</a></h3>
-              <p class="prix">
-                <data value="289.00">289,00 €</data> <span>TTC</span>
-              </p>
-              <p class="stock">
-                En stock
-              </p>
-            </article>
-          </li>
-          <li>
-            <article class="produit">
-              <img src="img/banniere-echographe.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Échographe portable</a></h3>
-              <p class="prix">
-                <data value="2490.00">2 490,00 €</data> <span>TTC</span>
-              </p>
-              <p class="stock">
-                En stock
-              </p>
-            </article>
-          </li>
-          <li>
-            <article class="produit">
-              <img src="img/tensiometre-face.png" alt="" width="1448" height="1086" loading="lazy">
-              <h3><a href="produit.html">Tensiomètre électronique de bras</a></h3>
-              <p class="prix">
-                <data value="49.90">49,90 €</data> <span>TTC</span>
-              </p>
-              <p class="stock stock-rupture">
-                En rupture de stock
-              </p>
-            </article>
-          </li>
+        <h2 id="titre-produits">Le catalogue</h2>
+        <div class="filtre">
+          <label class="case"><input type="checkbox" id="dispo-seulement"> Disponibles seulement</label>
+          <label for="choix-tri">Trier par</label>
+          <select id="choix-tri">
+            <option value="recommande">Recommandé</option>
+            <option value="prix-croissant">Prix croissant</option>
+            <option value="prix-decroissant">Prix décroissant</option>
+          </select>
+          <p id="nb-produits" aria-live="polite"></p>
+          <p id="message-catalogue" aria-live="polite"></p>
+        </div>
+        <!-- Les données du catalogue sont dans js/produits.js. -->
+        <ul id="liste-produits" class="produits liste-reset">
+          <!-- Les cartes sont créées dans js/catalogue.js. -->
         </ul>
         <!-- La pagination est préparée en HTML ; la liste reste statique. -->
         <nav class="pagination" aria-label="Pagination">

@@ -166,6 +166,7 @@ main > section, .fiche {
 
 /* Le point indique un panier rempli ; le nombre est aussi écrit dans le HTML. */
 .panier::after {
+  display: none;
   content: "";
   width: 8px;
   height: 8px;
@@ -973,3 +974,12 @@ legend {
     content: ' (' attr(href) ')';
   }
 }
+
+/* Jour 3 : le point dépend du vrai contenu du panier. */
+.panier.a-des-articles::after { display: block; }
+[hidden] { display: none !important; }
+.filtre { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.filtre label { min-height: 44px; display: inline-flex; align-items: center; }
+.filtre input[type="checkbox"] { min-height: 20px; width: 20px; height: 20px; }
+.filtre p { flex-basis: 100%; }
+.produit .btn { margin-top: 1rem; }
