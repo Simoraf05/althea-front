@@ -1,7 +1,0 @@
-[
-  { "produit": "tensiometre-bras", "auteur": "Nadia M.", "note": 5, "texte": "Lecture facile et mise en route rapide." },
-  { "produit": "tensiometre-bras", "auteur": "Hugo R.", "note": 4, "texte": "Appareil pratique pour le suivi à domicile." },
-  { "produit": "tensiometre-bras", "auteur": "Test sécurité", "note": 5, "texte": "<img src=x onerror=alert(1)> <strong>Texte de test XSS</strong>" },
-  { "produit": "tensiometre-bras", "auteur": "Note invalide", "note": 50, "texte": "Cet avis ne doit pas apparaître." }
-]
-

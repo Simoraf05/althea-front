@@ -1,52 +1,37 @@
+/* Contrastes texte / texte discret / primaire / alerte sur fond puis surface :
+   clair : 11,98/11,08 ; 6,22/5,76 ; 7,50/6,94 ; 6,64/6,14.
+   sombre : 15,06/12,56 ; 9,69/8,08 ; 10,84/9,04 ; 9,44/7,87. */
+/* Les variables regroupent les couleurs pour les modifier à un seul endroit. */
 :root {
-  color-scheme: light;
-
-  /* Fixed light palette: clear blue, cloud white and a warm amber accent. */
-  --couleur-primaire: #2d5bd1;
-  --couleur-primaire-fonce: #2447aa;
-  --couleur-primaire-pale: #edf3ff;
-  --couleur-primaire-bord: #c6d5f6;
+  color-scheme: light dark;
+  --couleur-primaire: #125c4c;
+  --couleur-primaire-fonce: #0b4236;
   --couleur-sur-primaire: #ffffff;
-  --couleur-accent: #92500a;
-  --couleur-texte: #182640;
-  --couleur-texte-discret: #52627c;
-  --couleur-fond: #f8faff;
-  --couleur-surface: #ffffff;
-  --couleur-surface-muted: #f3f6fc;
-  --couleur-surface-inactive: #edf0f5;
-  --couleur-bordure: #dce4f1;
-  --couleur-alerte: #a23138;
-  --couleur-alerte-fond: #fff0f0;
-  --couleur-alerte-pale: #fff5f5;
-  --couleur-succes: #20664b;
-  --couleur-succes-fond: #eaf7ef;
-  --couleur-pied: #eef3fc;
-  --couleur-pied-texte: #1c2b46;
-  --couleur-pied-texte-discret: #53627b;
-  --couleur-pied-lien: #2447aa;
-  --couleur-pied-bordure: #d2deef;
-
-  --police: "Aptos", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-  --taille-xs: .75rem;
-  --taille-sm: .875rem;
-  --taille-base: 1rem;
-  --taille-lg: 1.2rem;
-  --taille-xl: 1.5rem;
-  --taille-h1: clamp(2.2rem, 6vw, 4.4rem);
-
-  --espace-mini: .25rem;
-  --espace-petit: .5rem;
+  --couleur-sur-image: #ffffff;
+  --couleur-texte: #20382e;
+  --couleur-texte-discret: #566057;
+  --couleur-fond: #fbf9f4;
+  --couleur-surface: #f0f1e9;
+  --couleur-bordure: #bac4b8;
+  --couleur-alerte: #a32f30;
+  /* Police, espacements et arrondis */
+  --police: 'Segoe UI', Arial, sans-serif;
   --espace: 1rem;
-  --espace-grand: 1.5rem;
-  --espace-xl: 2.5rem;
+  --rayon: 8px;
+  --rayon-grand: 16px;
+}
 
-  --rayon: .7rem;
-  --rayon-grand: 1.1rem;
-  --cible: 44px;
-  --focus-epaisseur: 3px;
-  --ombre-petite: 0 8px 24px rgb(24 38 64 / .055);
-  --ombre: 0 12px 32px rgb(24 38 64 / .09);
-  --ombre-grand: 0 18px 42px rgb(24 38 64 / .15);
-  --ombre-survol: 0 18px 42px rgb(45 91 209 / .16);
-  --largeur-max: 76rem;
+/* Le mode sombre suit le réglage de l’appareil. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --couleur-primaire: #9bdbc1;
+    --couleur-primaire-fonce: #bcebd7;
+    --couleur-sur-primaire: #10291f;
+    --couleur-texte: #edf2e9;
+    --couleur-texte-discret: #bbc6b9;
+    --couleur-fond: #131e18;
+    --couleur-surface: #1e2e24;
+    --couleur-bordure: #647c69;
+    --couleur-alerte: #ffaaaa;
+  }
 }
