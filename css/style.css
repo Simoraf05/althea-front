@@ -321,6 +321,26 @@ main > h1 + section {
   border-radius: .65rem;
 }
 
+.theme-toggle {
+  display: inline-grid;
+  flex: 0 0 var(--cible);
+  place-items: center;
+  width: var(--cible);
+  height: var(--cible);
+  padding: 0;
+  color: var(--couleur-texte);
+  font-size: 1.15rem;
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: .65rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--couleur-primaire-fonce);
+  background: var(--couleur-primaire-pale);
+}
+
 .recherche {
   display: grid;
   flex: 1 1 100%;
@@ -544,16 +564,16 @@ main > h1 + section {
 
 .carrousel .slide-texte .btn {
   margin-block-start: .25rem;
-  color: #123331;
-  background: #fff;
-  border-color: #fff;
+  color: var(--couleur-carrousel-bouton-texte);
+  background: var(--couleur-carrousel-bouton-fond);
+  border-color: var(--couleur-carrousel-bouton-fond);
   box-shadow: none;
 }
 
 .carrousel .slide-texte .btn:hover {
-  color: #123331;
-  background: #d9f0e8;
-  border-color: #d9f0e8;
+  color: var(--couleur-carrousel-bouton-texte);
+  background: var(--couleur-carrousel-bouton-survol);
+  border-color: var(--couleur-carrousel-bouton-survol);
 }
 
 .pastilles {

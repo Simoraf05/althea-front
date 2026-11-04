@@ -25,6 +25,9 @@
   --couleur-pied-texte-discret: #53627b;
   --couleur-pied-lien: #2447aa;
   --couleur-pied-bordure: #d2deef;
+  --couleur-carrousel-bouton-fond: #ffffff;
+  --couleur-carrousel-bouton-texte: #123331;
+  --couleur-carrousel-bouton-survol: #d9f0e8;
 
   --police: "Aptos", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
   --taille-xs: .75rem;
@@ -49,4 +52,40 @@
   --ombre-grand: 0 18px 42px rgb(24 38 64 / .15);
   --ombre-survol: 0 18px 42px rgb(45 91 209 / .16);
   --largeur-max: 76rem;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --couleur-primaire: #8baaff;
+  --couleur-primaire-fonce: #b8caff;
+  --couleur-primaire-pale: #263653;
+  --couleur-primaire-bord: #4b6591;
+  --couleur-sur-primaire: #14213a;
+  --couleur-accent: #ffd080;
+  --couleur-texte: #edf2ff;
+  --couleur-texte-discret: #b8c4d8;
+  --couleur-fond: #121a28;
+  --couleur-surface: #1b2739;
+  --couleur-surface-muted: #222f43;
+  --couleur-surface-inactive: #303b4d;
+  --couleur-bordure: #3b4a61;
+  --couleur-alerte: #ffb5b8;
+  --couleur-alerte-fond: #48262e;
+  --couleur-alerte-pale: #37232b;
+  --couleur-succes: #8de0b1;
+  --couleur-succes-fond: #1d3b33;
+  --couleur-pied: #172235;
+  --couleur-pied-texte: #edf2ff;
+  --couleur-pied-texte-discret: #b8c4d8;
+  --couleur-pied-lien: #b8caff;
+  --couleur-pied-bordure: #3b4a61;
+  --couleur-carrousel-bouton-fond: #dce7ff;
+  --couleur-carrousel-bouton-texte: #17233b;
+  --couleur-carrousel-bouton-survol: #bfd0f5;
+
+  --ombre-petite: 0 8px 24px rgb(0 0 0 / .18);
+  --ombre: 0 12px 32px rgb(0 0 0 / .24);
+  --ombre-grand: 0 18px 42px rgb(0 0 0 / .34);
+  --ombre-survol: 0 18px 42px rgb(0 0 0 / .32);
 }

@@ -43,9 +43,9 @@ La règle XSS du projet : toute donnée variable est affichée comme du texte av
 
 ## Couleurs et responsive
 
-Les couleurs sont définies dans `css/variables.css`. La palette reste claire conformément à la demande du projet. Les mises en page s’adaptent aux écrans mobiles et larges ; le menu mobile se ferme avec Échap et rend le focus à son bouton.
+Les couleurs sont définies dans `css/variables.css`. Le thème clair est appliqué par défaut ; le bouton du menu permet de passer au thème sombre et le choix est conservé entre les pages. Les mises en page s’adaptent aux écrans mobiles et larges ; le menu mobile se ferme avec Échap et rend le focus à son bouton.
 
 ## Vérification
 
-Les tests JavaScript sont documentés dans `docs/tests-js.md`. Les contrôles interactifs en navigateur restent à réaliser : parcours clavier à 360 px, carrousel, achats, validation des quantités, rechargement et synchronisation du panier, avis, recherche et console CSP. Aucune mesure Lighthouse ni capture du Jour 3 n’a été produite dans cette session.
+Les dix tests JavaScript sont documentés dans `docs/tests-js.md` et passent. Des captures mobiles à 360 px sont disponibles dans `docs/captures/`. Les essais clavier complets, le parcours interactif du carrousel et du panier, la validation de toutes les saisies, la synchronisation entre onglets, ainsi que les mesures Lighthouse restent à réaliser.
 
