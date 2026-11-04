@@ -12,6 +12,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
@@ -28,9 +29,7 @@
     <!-- Cart and language selector -->
     <div class="panier-langues">
       <p class="panier">
-        <a href="#panier" aria-label="Panier, 0 article">
-          Panier <span class="compteur">0</span>
-        </a>
+        <a href="panier.html" aria-label="Panier, 0 article">Panier <span class="compteur">0</span><span class="visually-hidden compteur-texte">(0 article)</span></a>
       </p>
   
       <select
@@ -48,12 +47,11 @@
     <!-- Navigation and search -->
     <div class="recherche-menu">
   
-      <details class="navigation-mobile">
-        <summary class="menu-bouton">
-          <span class="visually-hidden">Menu</span>
-        </summary>
-  
-        <nav class="menu" aria-label="Menu principal">
+      <div class="navigation-mobile">
+      <button class="menu-bouton" type="button" aria-expanded="true">
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="menu" aria-label="Menu principal">
           <ul class="liste-reset">
             <li><a href="index.html" aria-current="page">Accueil</a></li>
             <li><a href="categorie.html">Diagnostic</a></li>
@@ -65,7 +63,7 @@
             <li><a href="index.html#presentation">À propos d’Althea Systems</a></li>
           </ul>
         </nav>
-      </details>
+    </div>
   
       <form
         class="recherche"
@@ -97,7 +95,7 @@
 
     <section class="carrousel" aria-labelledby="titre-carrousel">
       <h2 id="titre-carrousel">À la une</h2>
-      <ul class="liste-reset defile" tabindex="0" aria-label="À la une, faire défiler les slides">
+      <ul id="une-defile" class="liste-reset defile" tabindex="0" aria-label="À la une, faire défiler les slides">
         <li id="une-1" class="slide">
           <picture><source media="(min-width: 48rem)" srcset="img/slide-diagnostic-large.svg"><img src="img/slide-diagnostic-square.svg" alt="Illustration de matériel de diagnostic médical" width="640" height="640" fetchpriority="high"></picture>
           <div class="slide-texte"><h3>Des équipements fiables pour le diagnostic</h3>
@@ -117,7 +115,8 @@
           <a class="btn lien-btn" href="#mobilier">Découvrir la sélection</a></div>
         </li>
       </ul>
-      <nav class="pastilles" aria-label="Choisir une slide"><a href="#une-1"><span class="visually-hidden">Slide 1</span></a><a href="#une-2"><span class="visually-hidden">Slide 2</span></a><a href="#une-3"><span class="visually-hidden">Slide 3</span></a></nav>
+      <nav class="pastilles" aria-label="Choisir une slide"><a href="#une-1" aria-current="true"><span class="visually-hidden">Slide 1</span></a><a href="#une-2"><span class="visually-hidden">Slide 2</span></a><a href="#une-3"><span class="visually-hidden">Slide 3</span></a></nav>
+      <div class="carrousel-controles"><button class="btn-secondaire precedent" type="button" aria-controls="une-defile">Précédent</button><button class="btn-secondaire suivant" type="button" aria-controls="une-defile">Suivant</button></div>
     </section>
 
     <section id="presentation" class="presentation" aria-labelledby="titre-presentation">
@@ -213,3 +212,4 @@
 </body>
 
 </html>
+

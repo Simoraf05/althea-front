@@ -1,31 +1,51 @@
 # Althea Systems · site vitrine front-end
 
-Projet pédagogique HTML et CSS responsive, sans JavaScript. Il présente une boutique de matériel médical avec accueil, catalogue de diagnostic, fiche produit, recherche, connexion et inscription.
+Projet pédagogique HTML, CSS et JavaScript ES6 pour une boutique de matériel médical. Le site comprend l’accueil, un catalogue, une fiche produit, la recherche, le panier, la connexion et l’inscription.
 
 ## Arborescence
 
 ```text
-index.html, categorie.html, produit.html, recherche.html
+index.html, categorie.html, produit.html, recherche.html, panier.html
 connexion.html, inscription.html
 css/variables.css, css/style.css
-img/ (logo, icônes, catégories, produits et photos adaptatives)
-docs/analyse.md, docs/audit.md, docs/responsive.md, docs/securite.md
+js/produits.js, js/tri.js, js/outils.js, js/catalogue.js, js/recherche.js
+js/panier.js, js/icone-panier.js, js/vue-panier.js, js/fiche.js, js/avis.js
+js/menu.js, js/carrousel.js, js/tests.js, js/main.js
+data/avis.json
+img/ (logo, icônes, catégories, produits et images adaptatives)
+docs/ (analyse, audit, sécurité, responsive et tests JavaScript)
 ```
 
-## Ouvrir le site
+## Démarrer
 
-Ouvrir `index.html` dans un navigateur. Pour vérifier le responsive, utiliser le mode appareil à 320, 360, 768 et 1 280 px. Les formulaires d’authentification sont des maquettes front-end : aucun serveur de compte n’est fourni.
+Ouvrir le dossier dans VS Code puis lancer `index.html` avec Live Server. Les modules JavaScript et `fetch` nécessitent un serveur local ; l’ouverture directe par `file://` ne suffit pas. Pour lancer les tests des fonctions, ouvrir `categorie.html?tests`.
 
-## Choix techniques
+Les formulaires de connexion et d’inscription restent des maquettes front-end : aucun serveur de compte n’est fourni.
 
-1. Le CSS est mobile d’abord. Flexbox aligne les éléments de navigation, Grid compose les catégories et les résultats, et `srcset` propose des images de fiche en 400 et 800 px.
-2. Le produit épuisé est annoncé avec du texte, son achat est désactivé et sa photo est grisée. Les formulaires utilisent des libellés explicites et des méthodes POST pour les mots de passe.
-3. Les couleurs sont centralisées dans `css/variables.css`. Le projet utilise actuellement une palette claire fixe, conformément au choix de design demandé. Le mouvement respecte `prefers-reduced-motion`.
-4. Chaque page porte une CSP adaptée au site statique. En production, la politique doit aussi être envoyée comme en-tête HTTP et les contrôles doivent être validés côté serveur.
+## JavaScript (Jour 3)
+
+- `js/produits.js` contient les données du catalogue et `trouverProduit(id)`.
+- `js/tri.js` trie une copie : produits prioritaires en premier, autres ensuite, épuisés toujours à la fin. Les tris par prix conservent cette règle.
+- `js/outils.js` formate les prix en euros.
+- `js/catalogue.js` crée les cartes et écrit les données avec `textContent`.
+- `js/recherche.js` normalise les accents et applique les critères issus de l’URL.
+- `js/panier.js` gère l’état, le total, le stockage validé et le rechargement entre onglets.
+- `js/icone-panier.js` met à jour le nombre annoncé et le point du panier.
+- `js/vue-panier.js` dessine les lignes, les sous-totaux et le total.
+- `js/fiche.js` vérifie les quantités et bloque les achats indisponibles.
+- `js/avis.js` charge les avis JSON, contrôle les notes et les affiche sans interpréter leur texte.
+- `js/menu.js` gère le menu au clavier, son état ARIA et la touche Échap.
+- `js/carrousel.js` commande les slides et synchronise les pastilles avec leur visibilité.
+- `js/tests.js` lance les dix tests accessibles via `categorie.html?tests`.
+- `js/main.js` initialise les fonctions partagées et les éléments présents sur la page.
+
+La règle XSS du projet : toute donnée variable est affichée comme du texte avec `textContent`, jamais comme du HTML avec `innerHTML`. Les saisies et les données relues dans `localStorage` sont vérifiées en JavaScript.
+
+## Couleurs et responsive
+
+Les couleurs sont définies dans `css/variables.css`. La palette reste claire conformément à la demande du projet. Les mises en page s’adaptent aux écrans mobiles et larges ; le menu mobile se ferme avec Échap et rend le focus à son bouton.
 
 ## Vérification
 
-Le 3 novembre 2026, le validateur HTML W3C ne signale aucune erreur sur les six pages et le validateur CSS W3C valide `css/style.css` au profil CSS3 sans erreur.
-
-Les essais en mode appareil (320, 360, 768 et 1 280 px), le zoom à 200 %, le clavier, le contraste, la réduction des animations, l’aperçu avant impression, la console CSP et Lighthouse restent à vérifier dans un navigateur. Les scores Lighthouse historiques (Accueil 88/100, Produit 100/100) ne sont pas des résultats du Jour 2. Les dix captures demandées restent à ajouter dans `docs/captures/`. Le mode sombre automatique du TP n’est pas activé, car le projet conserve une palette claire fixe conformément au choix demandé.
+Les tests JavaScript sont documentés dans `docs/tests-js.md`. Les contrôles interactifs en navigateur restent à réaliser : parcours clavier à 360 px, carrousel, achats, validation des quantités, rechargement et synchronisation du panier, avis, recherche et console CSP. Aucune mesure Lighthouse ni capture du Jour 3 n’a été produite dans cette session.
 

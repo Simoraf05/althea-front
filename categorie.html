@@ -12,6 +12,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
@@ -28,9 +29,7 @@
     <!-- Cart and language selector -->
     <div class="panier-langues">
       <p class="panier">
-        <a href="#panier" aria-label="Panier, 0 article">
-          Panier <span class="compteur">0</span>
-        </a>
+        <a href="panier.html" aria-label="Panier, 0 article">Panier <span class="compteur">0</span><span class="visually-hidden compteur-texte">(0 article)</span></a>
       </p>
   
       <select
@@ -48,12 +47,11 @@
     <!-- Navigation and search -->
     <div class="recherche-menu">
   
-      <details class="navigation-mobile">
-        <summary class="menu-bouton">
-          <span class="visually-hidden">Menu</span>
-        </summary>
-  
-        <nav class="menu" aria-label="Menu principal">
+      <div class="navigation-mobile">
+      <button class="menu-bouton" type="button" aria-expanded="true">
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="menu" aria-label="Menu principal">
           <ul class="liste-reset">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="categorie.html" aria-current="page">Diagnostic</a></li>
@@ -65,7 +63,7 @@
             <li><a href="index.html#presentation">À propos d’Althea Systems</a></li>
           </ul>
         </nav>
-      </details>
+    </div>
   
       <form
         class="recherche"
@@ -95,12 +93,10 @@
   <main id="contenu">
     <section class="bandeau"><img src="img/categorie-diagnostic.svg" alt="" width="1280" height="720"><h1>Diagnostic</h1></section>
     <p>Des équipements de diagnostic pour accompagner les professionnels de santé au quotidien.</p>
-    <section aria-labelledby="titre-produits-categorie"><h2 id="titre-produits-categorie">Les produits de la catégorie</h2><ul class="produits liste-reset"><li><article class="produit"><a href="produit.html"><img src="img/tensiometre.svg" alt="Tensiomètre électronique de bras"><h3>Tensiomètre électronique de bras</h3></a><p class="prix"><data value="49.90">49,90 €</data> TTC</p><p class="stock">En stock</p></article></li>
-<li><article class="produit"><a href="produit.html"><img src="img/oxymetre.svg" alt="Oxymètre de pouls"><h3>Oxymètre de pouls</h3></a><p class="prix"><data value="24.90">24,90 €</data> TTC</p><p class="stock">En stock</p></article></li>
-<li><article class="produit"><a href="produit.html"><img src="img/thermometre.svg" alt="Thermomètre sans contact"><h3>Thermomètre sans contact</h3></a><p class="prix"><data value="19.90">19,90 €</data> TTC</p><p class="stock">En stock</p></article></li>
-<li><article class="produit"><a href="produit.html"><img src="img/stethoscope.svg" alt="Stéthoscope double pavillon"><h3>Stéthoscope double pavillon</h3></a><p class="prix"><data value="35.00">35,00 €</data> TTC</p><p class="stock">En stock</p></article></li>
-<li><article class="produit"><a href="produit.html"><img src="img/glucometre.svg" alt="Glucomètre"><h3>Glucomètre</h3></a><p class="prix"><data value="29.90">29,90 €</data> TTC</p><p class="stock">En stock</p></article></li>
-<li><article class="produit"><a href="produit.html"><img src="img/tensiometre-poignet.svg" alt="Tensiomètre de poignet"><h3>Tensiomètre de poignet</h3></a><p class="prix"><data value="39.90">39,90 €</data> TTC</p><p class="stock stock-rupture">En rupture de stock</p></article></li></ul></section>
+    <section aria-labelledby="titre-produits-categorie"><h2 id="titre-produits-categorie">Les produits de la catégorie</h2>
+      <div class="filtre-catalogue"><label class="case-disponibles" for="dispo-seulement"><input id="dispo-seulement" type="checkbox"> Disponibles seulement</label><p id="nb-produits" aria-live="polite"></p><label for="choix-tri">Trier par</label><select id="choix-tri"><option value="recommande">Recommandés</option><option value="prix-croissant">Prix croissant</option><option value="prix-decroissant">Prix décroissant</option></select></div>
+      <p id="statut-tests" class="statut-tests" aria-live="polite" hidden></p>
+      <ul id="liste-produits" class="produits liste-reset"><!-- cartes générées par js/catalogue.js --></ul></section>
     <nav class="pagination" aria-label="Pagination"><ul class="liste-reset"><li><a href="?page=1" aria-current="page"><span class="visually-hidden">Page </span>1</a></li><li><a href="?page=2"><span class="visually-hidden">Page </span>2</a></li><li><a href="?page=3"><span class="visually-hidden">Page </span>3</a></li><li><a href="?page=2">Suivant</a></li></ul></nav>
   </main>
 
@@ -113,3 +109,4 @@
 </body>
 
 </html>
+

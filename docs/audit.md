@@ -14,3 +14,14 @@
 | Responsive, clavier, zoom, impression et CSP en navigateur | Recette manuelle | Non vérifiée dans un navigateur | À faire |
 | Lighthouse | Accessibilité et performance | Aucun score Jour 2 mesuré ; les scores du Jour 1 sont historiques | À faire |
 
+## Jour 3 · JavaScript ES6 et DOM
+
+- Catalogue généré depuis `js/produits.js`, trié sur une copie et filtrable par disponibilité.
+- Recherche avec normalisation sans accents, filtres URL et validation des nombres.
+- Menu burger accessible au clavier et carrousel piloté par boutons, pastilles et `IntersectionObserver`.
+- Fiche produit avec vérification de quantité, avis chargés par `fetch` et données piégées rendues en texte.
+- Panier calculé depuis les prix du catalogue, limité aux identifiants et quantités dans `localStorage`, avec mise à jour entre onglets.
+- Dix tests JavaScript dans `docs/tests-js.md`, lançables avec `categorie.html?tests`.
+
+Les tests automatisés portent sur les fonctions de tri, prix et recherche. Les essais visuels et clavier, les parcours du panier, les requêtes `fetch` et l’inspection de la console CSP nécessitent encore une session navigateur ; ils ne sont pas indiqués comme validés.
+

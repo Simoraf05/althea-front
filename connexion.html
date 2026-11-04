@@ -12,6 +12,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
@@ -28,9 +29,7 @@
     <!-- Cart and language selector -->
     <div class="panier-langues">
       <p class="panier">
-        <a href="#panier" aria-label="Panier, 0 article">
-          Panier <span class="compteur">0</span>
-        </a>
+        <a href="panier.html" aria-label="Panier, 0 article">Panier <span class="compteur">0</span><span class="visually-hidden compteur-texte">(0 article)</span></a>
       </p>
   
       <select
@@ -48,12 +47,11 @@
     <!-- Navigation and search -->
     <div class="recherche-menu">
   
-      <details class="navigation-mobile">
-        <summary class="menu-bouton">
-          <span class="visually-hidden">Menu</span>
-        </summary>
-  
-        <nav class="menu" aria-label="Menu principal">
+      <div class="navigation-mobile">
+      <button class="menu-bouton" type="button" aria-expanded="true">
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="menu" aria-label="Menu principal">
           <ul class="liste-reset">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="categorie.html">Diagnostic</a></li>
@@ -65,7 +63,7 @@
             <li><a href="index.html#presentation">À propos d’Althea Systems</a></li>
           </ul>
         </nav>
-      </details>
+    </div>
   
       <form
         class="recherche"
@@ -103,3 +101,4 @@
 </body>
 
 </html>
+
