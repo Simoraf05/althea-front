@@ -1,0 +1,10 @@
+[
+  { "produit": "tensiometre", "auteur": "Claire M.", "note": 5, "texte": "Écran très lisible, la mesure est rapide. Je le recommande aux seniors." },
+  { "produit": "tensiometre", "auteur": "Docteur Benali", "note": 4, "texte": "Fiable et simple à utiliser en cabinet. Le brassard standard convient à la plupart des patients." },
+  { "produit": "tensiometre", "auteur": "<b>Marc</b><img src=x onerror=alert(1)>", "note": 3, "texte": "<script>alert('avis piégé')</script>Texte avec du <b>gras</b> et <i>de l’italique</i>." },
+  { "produit": "tensiometre", "auteur": "Faux avis", "note": 50, "texte": "Cet avis a une note impossible : il doit être ignoré." },
+  { "produit": "oxymetre", "auteur": "Sophie L.", "note": 5, "texte": "Précis et rapide, je l’utilise tous les jours auprès de mes patients." },
+  { "produit": "oxymetre", "auteur": "Karim T.", "note": 4, "texte": "Léger, l’écran est net. La pince est un peu serrée sur les petits doigts." },
+  { "produit": "stethoscope", "auteur": "Nadia R.", "note": 5, "texte": "Très bon son, les deux pavillons sont pratiques pour les enfants." },
+  { "produit": "thermometre", "auteur": "Paul D.", "note": 4, "texte": "La mesure est instantanée. Pratique pour les enfants qui bougent." }
+]

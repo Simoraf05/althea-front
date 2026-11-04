@@ -1,79 +1,81 @@
-# Plan des interfaces · Althea
+# Plan des interfaces · Althea Systems
+
+> Plan de travail basé sur le cahier des charges du TP. Les textes et caractéristiques du produit sont des contenus de démonstration à confirmer avec le groupe.
 
 ## 1. Sur toutes les pages
 
-En-tête (header), de haut en bas :
+| Zone | Contenu, dans l'ordre | Balises / éléments |
+|---|---|---|
+| Lien d'évitement | Aller directement au contenu principal | `a.evitement` |
+| En-tête | Logo avec lien vers l'accueil | `header`, `p`, `a`, `img` |
+| En-tête | Panier et nombre d'articles | `p`, `a`, `span` |
+| En-tête | Menu de navigation | `details`, `summary`, `nav`, `ul`, `li`, `a` |
+| En-tête | Recherche produit | `form`, `label`, `input`, `button` |
+| Contenu | Contenu spécifique à chaque page | `main` |
+| Pied | Conditions générales, contact, Instagram et copyright | `footer`, `ul`, `li`, `a`, `p` |
 
-- le lien d'évitement « Aller au contenu » (premier lien de la page) ... a
-- le logo, qui ramène à l'accueil ........................................ a + img
-- le panier, avec le nombre d'articles ................................... a
-- le nombre d'articles, lu à voix haute mais caché (pour le point rouge) . span.visually-hidden
-- le bouton Menu ......................................................... button
-- la recherche ........................................................... form, label, input, button
-- les liens du menu (Accueil, Catalogue, Mon compte, CGU,
-  Mentions légales, Contact) ............................................. nav, ul, li, a
+Sur téléphone, le pied de page est masqué ; ses liens sont également disponibles dans le menu.
 
-Pied (footer) : CGU, Mentions légales, Contact, LinkedIn, Instagram, © 2026 Althea Systems ... ul, li, a, p
+Le point du panier est décoratif. Le nombre d'articles est écrit en texte afin que l'information ne dépende pas de la couleur ou d'un point visuel.
 
-Sur téléphone : le pied est caché, ses liens (CGU, Mentions légales, Contact) sont déjà dans le menu.
+## 2. Page Accueil (`index.html`)
 
-## 2. Page Accueil (index.html)
+| # | Bloc | Contenu | Balises |
+|---|---|---|---|
+| 1 | Titre | Phrase d'accroche principale | `h1` |
+| 2 | Carrousel | 3 slides : image, titre, phrase et lien | `section`, `ul`, `li`, `img`, `h3`, `p`, `a` |
+| 3 | Présentation | Deux phrases de présentation d'Althea | `section`, `h2`, `p` |
+| 4 | Catégories | 4 liens avec image et nom | `section`, `ul`, `li`, `a`, `img`, `h3` |
+| 5 | Top produits | 4 cartes avec image, nom, prix et stock | `section`, `ul`, `li`, `article`, `img`, `h3`, `p` |
 
-| # | Bloc | Ce qu'on y met | Balise |
-|---|------|----------------|--------|
-| 1 | Titre | « Le matériel médical fiable, livré à votre cabinet » | h1 |
-| 2 | Carrousel | 3 slides : image, phrase, lien | section, ul, li, img, p, a |
-| 3 | Présentation | 2 phrases sur Althea (depuis quand, ce qu'elle garantit) | p |
-| 4 | Catégories | h2 « Nos catégories » + 4 liens : Diagnostic, Soins, Mobilier, Consommables (image + nom) | section, h2, ul, a, img |
-| 5 | Top Produits | h2 « Les Top Produits du moment » + 4 cartes | section, h2, ul, article |
+Chaque carte produit utilise la classe commune `produit`. Une carte en rupture doit afficher le texte « En rupture de stock » et utiliser la classe `stock-rupture`.
 
-- Carte « Top Produits » : une image, le nom (h3 avec lien vers produit.html), le prix (p + data), le stock (p).
-- Une des 4 cartes est en rupture : texte « En rupture de stock ».
+## 3. Page Produit (`produit.html`)
 
-## 3. Page Produit (produit.html)
+Produit choisi pour la démonstration : tensiomètre électronique de bras.
 
-Produit choisi : Tensiomètre électronique de bras, 49,90 € TTC.
+| # | Bloc | Contenu | Balises |
+|---|---|---|---|
+| 1 | Fil d'Ariane | Accueil › Diagnostic › Tensiomètre | `nav`, `ol`, `li`, `a` |
+| 2 | Nom | Nom du produit | `h1` |
+| 3 | Photos | 3 vues du produit | `section`, `ul`, `li`, `img` |
+| 4 | Prix | Prix TTC | `p` |
+| 5 | Disponibilité | Texte « En rupture de stock » | `p.stock.stock-rupture` |
+| 6 | Description | Présentation courte du produit | `p.description` |
+| 7 | Achat | Quantité et bouton désactivés car le produit est épuisé | `form`, `label`, `input`, `button` |
+| 8 | Caractéristiques | Type, affichage, utilisation, alimentation | `dl`, `dt`, `dd` |
+| 9 | Similaires | 4 cartes produit | `section`, `ul`, `li`, `article` |
 
-| # | Bloc | Ce qu'on y met | Balise |
-|---|------|----------------|--------|
-| 1 | Fil d'Ariane | Accueil › Diagnostic › Tensiomètre électronique de bras | nav, ol, li, a |
-| 2 | Nom | le nom du produit, en grand | h1 |
-| 3 | Photos | 3 vues du produit, un alt différent chacune | section, ul, li, img |
-| 4 | Description | une ou deux phrases | p |
-| 5 | Prix | 49,90 € TTC | p, data |
-| 6 | Disponibilité | « Disponibilité : en rupture de stock » | p |
-| 7 | Achat | quantité + bouton « En rupture de stock » | form, label, input, button |
-| 8 | Caractéristiques | tour de bras, mémoire, alimentation, poids | section, h2, dl, dt, dd |
-| 9 | Similaires | h2 « Produits similaires » + 6 cartes | section, h2, ul, article |
+### Cas du produit épuisé
 
-Produit épuisé :
-
-- le texte « En rupture de stock » est écrit dans la page (pas seulement une couleur) ;
-- le champ quantité et le bouton sont désactivés (`disabled`) ;
-- le bouton affiche « En rupture de stock » ;
-- côté CSS : bouton en pointillés, image grisée.
+- Le statut est écrit explicitement en texte : « En rupture de stock ».
+- Le champ de quantité est désactivé.
+- Le bouton d'achat est désactivé.
+- L'image est grisée en CSS, mais l'information reste compréhensible sans couleur.
 
 ## 4. Les morceaux qui reviennent
 
 | Morceau | Pages | Classe |
-|---------|-------|--------|
-| En-tête | toutes | entete |
-| Logo | toutes | logo |
-| Panier | toutes | panier |
-| Bouton Menu | toutes | menu-bouton |
-| Recherche | toutes | recherche |
-| Menu | toutes | menu |
-| Pied de page | toutes | pied |
-| Carrousel | accueil | carrousel |
-| Slide | accueil | slide |
-| Catégories | accueil | categories |
-| Liste de produits | accueil, produit | top-produits |
-| Carte produit | accueil, produit | produit |
-| Prix (carte) | accueil, produit | prix |
-| Stock | accueil, produit | stock |
-| Stock épuisé | accueil, produit | stock-rupture |
-| Fil d'Ariane | produit | ariane |
-| Fiche produit | produit | fiche |
-| Formulaire d'achat | produit | achat |
-| Bouton | produit | btn |
-| Caractéristiques | produit | caracteristiques |
+|---|---|---|
+| En-tête | Accueil, Produit | `entete` |
+| Logo | Accueil, Produit | `logo` |
+| Panier | Accueil, Produit | `panier` |
+| Bouton du menu | Accueil, Produit | `menu-bouton` |
+| Recherche | Accueil, Produit | `recherche` |
+| Menu | Accueil, Produit | `menu` |
+| Pied de page | Accueil, Produit | `pied` |
+| Carrousel | Accueil | `carrousel` |
+| Diapositive | Accueil | `slide` |
+| Catégories | Accueil | `categories` |
+| Top produits | Accueil | `top-produits` |
+| Carte produit | Accueil, Produit | `produit` |
+| Prix | Accueil, Produit | `prix` |
+| Stock | Accueil, Produit | `stock` |
+| Rupture de stock | Accueil, Produit | `stock-rupture` |
+| Fil d'Ariane | Produit | `ariane` |
+| Fiche produit | Produit | `fiche` |
+| Zone d'achat | Produit | `achat` |
+| Bouton | Accueil, Produit | `btn` |
+| Caractéristiques | Produit | `caracteristiques` |
+
+La classe `produit` est utilisée pour les cartes des deux pages. La classe `fiche` désigne l'article détaillé sur la page produit.

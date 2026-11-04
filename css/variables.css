@@ -1,41 +1,104 @@
 :root {
-    --couleur-primaire: #1d4ed8;
-    --couleur-primaire-fonce: #1e40af;
-    --couleur-primaire-pale: #eff6ff;
-    --couleur-primaire-bord: #bfdbfe;
-    --couleur-sur-primaire: #ffffff;
-    --couleur-texte: #1f2937;
-    --couleur-texte-discret: #4b5563;
-    --couleur-fond: #f3f6fb;
-    --couleur-surface: #ffffff;
-    --couleur-alerte: #991b1b;
-    --couleur-alerte-fond: #fee2e2;
-    --couleur-succes: #166534;
-    --couleur-succes-fond: #dcfce7;
-    --couleur-pied: #111827;
-    --couleur-pied-texte: #e5e7eb;
-  
-    --police: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-  
-    --taille-xs: 0.75rem;
-    --taille-sm: 0.875rem;
-    --taille-base: 1rem;
-    --taille-lg: 1.25rem;
-    --taille-xl: 1.5rem;
-    --taille-h1: 1.75rem;
-  
-    --espace-mini: 0.25rem;
-    --espace-petit: 0.5rem;
-    --espace: 1rem;
-    --espace-grand: 1.5rem;
-    --espace-xl: 2.5rem;
-  
-    --rayon: 0.5rem;
-    --rayon-grand: 1rem;
-    --cible: 44px;
-    --bordure: 1px solid #dbe3ee;
-    --focus-epaisseur: 3px;
-    --ombre: 0 1px 2px rgb(15 23 42 / 6%), 0 4px 14px rgb(15 23 42 / 6%);
-    --ombre-survol: 0 8px 28px rgb(29 78 216 / 16%);
-    --largeur-max: 1200px;
+  color-scheme: light dark; /* champs, cases et barres de défilement suivent le mode */
+
+  /* Palette Color Hunt : #086288 · #4D8DBA · #97D7FF · #FFEFC4 (+ nuances dérivées)
+     Mode clair, contrastes du texte (minimum WCAG 4,5:1) : texte/fond 13.4:1 ; texte/surface 14.4:1 ; texte/creme 12.6:1 ; texte/pale 12.9:1 ; discret/fond 6.2:1 ; discret/surface 6.7:1 ; discret/creme 5.8:1 ; primaire/fond 6.3:1 ; primaire/surface 6.7:1 ; primaire/creme 5.9:1 ; primaire/pale 6.1:1 ; fonce/fond 8.9:1 ; fonce/surface 9.5:1 ; fonce/creme 8.3:1 ; sur/primaire 6.7:1 ; sur/fonce 9.5:1 ; sur/alerte 8.3:1 ; alerte/fond 7.8:1 ; alerte/surface 8.3:1 ; alerte/alertefond 6.8:1 ; succes/succesfond 6.5:1 ; succes/fond 6.7:1 ; piedtexte/pied 10.2:1 */
+  --couleur-primaire: #086288;
+  --couleur-primaire-fonce: #054b68;
+  --couleur-primaire-pale: #e5f5ff;
+  --couleur-primaire-bord: #97d7ff;
+  --couleur-secondaire: #4d8dba;
+  --couleur-sur-primaire: #ffffff;
+  --couleur-texte: #0f2d3d;
+  --couleur-texte-discret: #4a5f6c;
+  --couleur-fond: #fff7e1;
+  --couleur-creme: #ffefc4;
+  --couleur-surface: #ffffff;
+  --couleur-alerte: #991b1b;
+  --couleur-alerte-fond: #fee2e2;
+  --couleur-succes: #166534;
+  --couleur-succes-fond: #dcfce7;
+  --couleur-pied: #063d56;
+  --couleur-pied-texte: #ffefc4;
+  --couleur-bordure: #e6d5a8;
+  --ombre: 0 1px 2px rgb(8 98 136 / 8%), 0 4px 14px rgb(8 98 136 / 8%);
+  --ombre-survol: 0 8px 28px rgb(8 98 136 / 22%);
+  --couleur-sur-image: #ffffff; /* texte posé sur une photo : toujours blanc, sur dégradé noir */
+
+  --police: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+
+  --taille-xs: 0.75rem;
+  --taille-sm: 0.875rem;
+  --taille-base: 1rem;
+  --taille-lg: 1.25rem;
+  --taille-xl: 1.5rem;
+  --taille-h1: 1.75rem;
+
+  --espace-mini: 0.25rem;
+  --espace-petit: 0.5rem;
+  --espace: 1rem;
+  --espace-grand: 1.5rem;
+  --espace-xl: 2.5rem;
+
+  --rayon: 0.5rem;
+  --rayon-grand: 1rem;
+  --cible: 44px;
+  --bordure: 1px solid var(--couleur-bordure);
+  --focus-epaisseur: 3px;
+  --largeur-max: 70rem;
+}
+
+/* Le bouton ☾ / ☀ (js/theme.js) pose data-theme sur <html> et garde le choix */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Mode sombre, contrastes du texte : texte/fond 14.8:1 ; texte/surface 12.9:1 ; texte/creme 11.5:1 ; texte/pale 10.7:1 ; discret/fond 9.9:1 ; discret/surface 8.6:1 ; discret/creme 7.7:1 ; primaire/fond 10.8:1 ; primaire/surface 9.4:1 ; primaire/creme 8.4:1 ; primaire/pale 7.8:1 ; fonce/fond 13.2:1 ; fonce/surface 11.5:1 ; fonce/creme 10.2:1 ; sur/primaire 10.8:1 ; sur/fonce 13.2:1 ; sur/alerte 8.9:1 ; alerte/fond 8.9:1 ; alerte/surface 7.7:1 ; alerte/alertefond 7.3:1 ; succes/succesfond 9.1:1 ; succes/fond 12.0:1 ; piedtexte/pied 16.1:1 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --couleur-primaire: #97d7ff;
+    --couleur-primaire-fonce: #c7e8ff;
+    --couleur-primaire-pale: #16394d;
+    --couleur-primaire-bord: #3b7ea6;
+    --couleur-secondaire: #4d8dba;
+    --couleur-sur-primaire: #0a1f2b;
+    --couleur-texte: #ffefc4;
+    --couleur-texte-discret: #b8c9d4;
+    --couleur-fond: #0a1f2b;
+    --couleur-creme: #123446;
+    --couleur-surface: #102b3a;
+    --couleur-alerte: #fca5a5;
+    --couleur-alerte-fond: #4c1d24;
+    --couleur-succes: #86efac;
+    --couleur-succes-fond: #14391f;
+    --couleur-pied: #041620;
+    --couleur-pied-texte: #ffefc4;
+    --couleur-bordure: #25536a;
+    --ombre: 0 1px 2px rgb(0 0 0 / 30%), 0 4px 14px rgb(0 0 0 / 30%);
+    --ombre-survol: 0 8px 28px rgb(0 0 0 / 45%);
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --couleur-primaire: #97d7ff;
+  --couleur-primaire-fonce: #c7e8ff;
+  --couleur-primaire-pale: #16394d;
+  --couleur-primaire-bord: #3b7ea6;
+  --couleur-secondaire: #4d8dba;
+  --couleur-sur-primaire: #0a1f2b;
+  --couleur-texte: #ffefc4;
+  --couleur-texte-discret: #b8c9d4;
+  --couleur-fond: #0a1f2b;
+  --couleur-creme: #123446;
+  --couleur-surface: #102b3a;
+  --couleur-alerte: #fca5a5;
+  --couleur-alerte-fond: #4c1d24;
+  --couleur-succes: #86efac;
+  --couleur-succes-fond: #14391f;
+  --couleur-pied: #041620;
+  --couleur-pied-texte: #ffefc4;
+  --couleur-bordure: #25536a;
+  --ombre: 0 1px 2px rgb(0 0 0 / 30%), 0 4px 14px rgb(0 0 0 / 30%);
+  --ombre-survol: 0 8px 28px rgb(0 0 0 / 45%);
+}

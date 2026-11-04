@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Althea Systems</title>
+  <meta name="description" content="Contactez l'équipe Althea Systems pour toute question concernant nos produits.">
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <p class="logo">
+      <a href="index.html" aria-label="Althea Systems, accueil">
+        <img src="img/logo.svg" alt="Althea Systems">
+      </a>
+    </p>
+
+    <p class="panier">
+      <a href="panier.html">Panier <span class="compteur">0</span></a>
+    </p>
+
+    <nav class="navigation-principale" aria-label="Navigation principale">
+      <ul class="liste-reset">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="categorie.html">Nos catégories</a></li>
+        <li><a href="recherche.html">Recherche</a></li>
+        <li><a href="produit.html">Produits</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="inscription.html">S'inscrire</a></li>
+        <li><a href="connexion.html">Se connecter</a></li>
+      </ul>
+    </nav>
+
+    <form class="recherche" action="recherche.html" method="get" role="search">
+      <label for="recherche-contact">Rechercher un produit</label>
+      <input id="recherche-contact" name="q" type="search" placeholder="Ex. tensiomètre">
+      <button type="submit">Rechercher</button>
+    </form>
+  </header>
+
+  <main id="contenu">
+    <nav class="ariane" aria-label="Fil d'Ariane">
+      <ol class="liste-reset">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ol>
+    </nav>
+
+    <section class="formulaire-compte">
+      <h1>Contactez-nous</h1>
+      <p>Une question concernant nos produits ? Notre équipe est à votre écoute.</p>
+
+      <form class="formulaire-auth" action="#" method="post">
+        <div>
+          <label for="nom">Nom</label>
+          <input id="nom" name="nom" type="text" autocomplete="family-name" maxlength="50" required>
+        </div>
+
+        <div>
+          <label for="prenom">Prénom</label>
+          <input id="prenom" name="prenom" type="text" autocomplete="given-name" maxlength="50" required>
+        </div>
+
+        <div>
+          <label for="email">Adresse e-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div>
+          <label for="sujet">Sujet</label>
+          <select id="sujet" name="sujet" required>
+            <option value="">Choisissez un sujet</option>
+            <option value="produit">Question sur un produit</option>
+            <option value="commande">Question sur une commande</option>
+            <option value="livraison">Livraison</option>
+            <option value="autre">Autre demande</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <button class="btn" type="submit">Envoyer le message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <nav aria-label="Informations">
+      <ul class="liste-reset">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="categorie.html">Nos catégories</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Compte client">
+      <ul class="liste-reset">
+        <li><a href="inscription.html">Créer un compte</a></li>
+        <li><a href="connexion.html">Se connecter</a></li>
+        <li><a href="panier.html">Mon panier</a></li>
+      </ul>
+    </nav>
+
+    <p>Contact : contact@althea.example</p>
+    <p>© 2026 Althea Systems. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

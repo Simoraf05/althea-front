@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Se connecter · Althea Systems</title>
+  <meta name="description" content="Connectez-vous à votre compte Althea Systems.">
+  <meta name="theme-color" content="#086288">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+  <script src="js/avertissement.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <p class="logo">
+      <a href="index.html" aria-label="Althea Systems, accueil">
+        <img src="img/logo.svg" alt="Althea Systems">
+      </a>
+    </p>
+
+    <p class="panier">
+      <a href="panier.html" aria-label="Panier, 0 article">Panier <span class="compteur">0</span></a>
+    </p>
+
+    <button class="theme-bouton" type="button" aria-pressed="false" title="Mode sombre" hidden>
+      <span class="visually-hidden">Mode sombre</span>
+      <svg class="icone-lune" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg>
+      <svg class="icone-soleil" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+    </button>
+
+    <button class="menu-bouton" type="button" aria-expanded="true" aria-controls="menu-principal">Menu</button>
+    <nav id="menu-principal" class="menu" aria-label="Menu principal">
+      <ul class="liste-reset">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="categorie.html">Diagnostic</a></li>
+          <li><a href="connexion.html" aria-current="page">Se connecter</a></li>
+          <li><a href="inscription.html">S’inscrire</a></li>
+          <li><a href="cgu.html">Conditions générales</a></li>
+          <li><a href="mailto:contact@althea.example">Contact</a></li>
+          <li><a href="index.html#a-propos">À propos d’Althea Systems</a></li>
+      </ul>
+      <p class="langues">Langue :
+        <a href="index.html" lang="fr" hreflang="fr" aria-current="true">Français</a>
+        <a href="en/index.html" lang="en" hreflang="en">English</a>
+        <a href="ar/index.html" lang="ar" hreflang="ar" dir="rtl">العربية</a>
+      </p>
+    </nav>
+
+    <form class="recherche" action="recherche.html" method="get" role="search">
+      <label for="recherche-entete">Rechercher un produit</label>
+      <input id="recherche-entete" name="q" type="search" placeholder="Ex. tensiomètre">
+      <button type="submit">Rechercher</button>
+    </form>
+  </header>
+
+  <main id="contenu">
+    <h1>Se connecter</h1>
+    <form class="formulaire" action="connexion.html" method="post">
+      <p>
+        <label for="courriel">Adresse e-mail (obligatoire)</label>
+        <input id="courriel" name="courriel" type="email" autocomplete="email" required maxlength="254">
+        <span class="erreur">Écrivez une adresse e-mail valide.</span>
+      </p>
+      <p>
+        <label for="mdp">Mot de passe (obligatoire)</label>
+        <input id="mdp" name="mdp" type="password" autocomplete="current-password" required>
+        <span class="erreur">Écrivez votre mot de passe.</span>
+      </p>
+      <p><a href="mailto:contact@althea.example?subject=Mot%20de%20passe%20oubli%C3%A9">Mot de passe oublié ?</a></p>
+      <button class="btn" type="submit">Se connecter</button>
+      <p>Pas encore de compte ? <a href="inscription.html">Créer un compte</a></p>
+    </form>
+  </main>
+
+  <footer class="pied">
+    <nav aria-label="Informations légales"><ul class="liste-reset">
+      <li><a href="cgu.html">Conditions générales</a></li>
+    </ul></nav>
+    <nav aria-label="Contact"><ul class="liste-reset">
+      <li><a href="mailto:contact@althea.example">contact@althea.example</a></li>
+    </ul></nav>
+    <nav aria-label="Réseaux sociaux"><ul class="liste-reset">
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram <span class="visually-hidden">(nouvel onglet)</span></a></li>
+    </ul></nav>
+    <p>© 2026 Althea Systems. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
